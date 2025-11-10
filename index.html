@@ -1,0 +1,1457 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./src/output.css">
+  <link rel="stylesheet" href="https://microsoft.github.io/vscode-codicons/dist/codicon.css">
+  <title>Git Project</title>
+</head>
+
+<body class="bg-gradient-to-b from-[#040642] via-[#0b0d41] to-[#242072] text-white">
+
+  <!-- Navbar -->
+  <header id="navbar"
+    class="fixed top-0 left-0 w-full z-50 transition-all duration-500 p-2 bg-transparent backdrop-blur-sm border-0 border-transparent flex justify-between">
+    <div class="flex items-center gap-5 py-6 px-6 hidden lg:flex">
+
+      <i class="codicon codicon-github-inverted text-white" style="font-size: 30px;"></i>
+
+      <!-- PLATFORM -->
+      <div class="group relative">
+        <div class="flex items-center cursor-pointer">
+          <h6 class="text-white text-[20px]">Platform</h6>
+          <i class="codicon codicon-chevron-down text-3xl text-white"></i>
+        </div>
+
+        <!-- PLATFORM DROPDOWN -->
+        <div class="absolute left-0 mt-2 invisible group-hover:visible border bg-white w-[70vw] rounded-lg shadow-lg">
+
+          <div class="grid grid-cols-[30%_20%_30%_20%] p-8 gap-3">
+            <!-- FIRST -->
+            <div class="items-left">
+
+              <P class="text-[12px] text-black pb-8 font-semibold">AI CODE CREATION</P>
+              <div class="grid grid-cols-[50px_1fr] items-center gap-1 pb-6">
+                <div class="flex items-center justify-center">
+                  <i class="codicon codicon-copilot text-gray-500" style="font-size: 25px;"></i>
+                </div>
+                <div>
+                  <h6 class="text-lg font-semibold text-black">GitHub Copilot</h6>
+                  <p class="text-sm text-gray-700">Write better code with AI</p>
+                </div>
+              </div>
+
+              <div class="grid grid-cols-[50px_1fr] items-center gap-1 pb-6">
+                <div class="flex items-center justify-center">
+                  <i class="codicon codicon-sparkle text-gray-500" style="font-size: 25px;"></i>
+                </div>
+                <div>
+                  <h6 class="text-lg font-semibold text-black">GitHub Spark</h6>
+                  <p class="text-sm text-gray-700">Build and Deploy Intelligent Apps</p>
+                </div>
+              </div>
+
+              <div class="grid grid-cols-[50px_1fr] items-center gap-1 pb-6">
+                <div class="flex items-center justify-center">
+                  <i class="codicon codicon-live-share text-gray-500" style="font-size: 25px;"></i>
+                </div>
+                <div>
+                  <h6 class="text-lg font-semibold text-black">GitHub Models</h6>
+                  <p class="text-sm text-gray-700">Manage and Compare prompts</p>
+                </div>
+              </div>
+
+              <div class="grid grid-cols-[50px_1fr] items-center gap-1 pb-6">
+                <div class="flex items-center justify-center">
+                  <i class="codicon codicon-mcp text-gray-500" style="font-size: 25px;"></i>
+                </div>
+                <div>
+                  <h6 class="text-lg font-semibold text-black">MCP Registry</h6>
+                  <p class="text-sm text-gray-700">Discover and integrate external tools</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- SECOND -->
+
+            <div class="">
+              <P class="text-[12px] text-black pb-8 font-semibold">DEVELOPER WORKFLOWS</P>
+              <div class="grid grid-cols-[50px_1fr] items-center gap-1 pb-6">
+                <div class="flex items-center justify-center">
+                  <i class="codicon codicon-symbol-class text-gray-500" style="font-size: 25px;"></i>
+                </div>
+                <div>
+                  <h6 class="text-lg font-semibold text-black">Action</h6>
+                  <p class="text-sm text-gray-700">Automate any workflow</p>
+                </div>
+              </div>
+
+              <div class="grid grid-cols-[50px_1fr] items-center gap-1 pb-6">
+                <div class="flex items-center justify-center">
+                  <i class="codicon codicon-account text-gray-500" style="font-size: 25px;"></i>
+                </div>
+                <div>
+                  <h6 class="text-lg font-semibold text-black">Codespaces</h6>
+                  <p class="text-sm text-gray-700">Instant dev environments</p>
+                </div>
+              </div>
+
+              <div class="grid grid-cols-[50px_1fr] items-center gap-1 pb-6">
+                <div class="flex items-center justify-center">
+                  <i class="codicon codicon-issues text-gray-500" style="font-size: 25px;"></i>
+                </div>
+                <div>
+                  <h6 class="text-lg font-semibold text-black">Issues</h6>
+                  <p class="text-sm text-gray-700">Plan and track work</p>
+                </div>
+              </div>
+
+              <div class="grid grid-cols-[50px_1fr] items-center gap-1 pb-6">
+                <div class="flex items-center justify-center">
+                  <i class="codicon codicon-code text-gray-500" style="font-size: 25px;"></i>
+                </div>
+                <div>
+                  <h6 class="text-lg font-semibold text-black">Code Review</h6>
+                  <p class="text-sm text-gray-700">Manage code changes</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- THIRD-->
+
+            <div class="">
+              <P class="text-[12px] text-black pb-8 font-semibold">APPLICATION SECURITY</P>
+              <div class="grid grid-cols-[50px_1fr] items-center gap-1 pb-6">
+                <div class="flex items-center justify-center">
+                  <i class="codicon codicon-workspace-trusted text-gray-500" style="font-size: 25px;"></i>
+                </div>
+                <div>
+                  <h6 class="text-lg font-semibold text-black">Github Advanced Security</h6>
+                  <p class="text-sm text-gray-700">Find and fix vulnerabilities</p>
+                </div>
+              </div>
+
+              <div class="grid grid-cols-[50px_1fr] items-center gap-1 pb-6">
+                <div class="flex items-center justify-center">
+                  <i class="codicon codicon-code-review text-gray-500" style="font-size: 25px;"></i>
+                </div>
+                <div>
+                  <h6 class="text-lg font-semibold text-black">Code Security</h6>
+                  <p class="text-sm text-gray-700">Secure your code as you build</p>
+                </div>
+              </div>
+
+              <div class="grid grid-cols-[50px_1fr] items-center gap-1 pb-6">
+                <div class="flex items-center justify-center">
+                  <i class="codicon codicon-issues text-gray-500" style="font-size: 25px;"></i>
+                </div>
+                <div>
+                  <h6 class="text-lg font-semibold text-black">Secret Protection</h6>
+                  <p class="text-sm text-gray-700">Stop leaks before they start</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- FOURTH -->
+
+            <div class="ml-5">
+
+              <P class="text-[12px] text-black pb-4 font-semibold">APPLICATION SECURITY</P>
+
+              <hr class="w-60 border-gray-400 rotate-90 origin-left" />
+
+              <div class="ml-7">
+                <p class="text-lg font-semibold text-black py-2">Why Github </p>
+                <p class="text-lg font-semibold text-black py-2">Documentation</p>
+                <p class="text-lg font-semibold text-black py-2">Blog</p>
+                <p class="text-lg font-semibold text-black py-2">Chanelog</p>
+                <p class="text-lg font-semibold text-black py-2">Marketplace</p>
+              </div>
+
+            </div>
+
+          </div>
+
+          <!-- FOOTER (FULL WIDTH) -->
+          <div class="border bg-gray-400 pt-4 mt-4 mb-0 items-left rounded-bl-md rounded-br-md w-full">
+            <p class="text-lg font-semibold text-black p-4 items-center pl-8">View all features<span
+                class="codicon codicon-chevron-right"></span></p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Solution -->
+
+      <div class="group relative">
+        <div class="flex items-center cursor-pointer">
+          <h6 class="text-white text-[20px]">Solution</h6>
+          <i class="codicon codicon-chevron-down text-3xl text-white"></i>
+        </div>
+
+
+
+        <!-- SOLUTION DROPDOWN -->
+        <div class="absolute left-0 mt-2 invisible group-hover:visible border bg-white w-[50vw] rounded-lg shadow-lg">
+
+
+          <div class="grid grid-cols-[40%_30%_30%] gap-3 p-10">
+            <!-- FIRST -->
+            <div class="w-full">
+              <p class="text-[12px] text-black pb-4 font-semibold">BY COMPANY SIZE</p>
+              <div>
+                <p class="text-lg font-semibold text-black py-2">Enterprise</p>
+                <p class="text-lg font-semibold text-black py-2">Small and medium teams</p>
+                <p class="text-lg font-semibold text-black py-2">Startups</p>
+                <p class="text-lg font-semibold text-black py-2">Nonprofits</p>
+              </div>
+            </div>
+
+            <!-- SECOND -->
+            <div>
+              <p class="text-[12px] text-black pb-4 font-semibold">BY USE CASE</p>
+              <div>
+                <p class="text-lg font-semibold text-black py-2">App Modernization</p>
+                <p class="text-lg font-semibold text-black py-2">DevSecOps</p>
+                <p class="text-lg font-semibold text-black py-2">DevOps</p>
+                <p class="text-lg font-semibold text-black py-2">CI/CD</p>
+                <p class="text-lg font-semibold text-black py-2 items-center">
+                  View all use cases <span class="codicon codicon-chevron-right"></span>
+                </p>
+              </div>
+            </div>
+
+            <!-- THIRD -->
+            <div class="ml-7">
+              <p class="text-[12px] text-black pb-4 font-semibold">BY INDUSTRY</p>
+              <div>
+                <p class="text-lg font-semibold text-black py-2">Healthcare</p>
+                <p class="text-lg font-semibold text-black py-2">Financial Services</p>
+                <p class="text-lg font-semibold text-black py-2">Manufacturing</p>
+                <p class="text-lg font-semibold text-black py-2">Government</p>
+                <p class="text-lg font-semibold text-black py-2 items-center">
+                  View all industries <span class="codicon codicon-chevron-right"></span>
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- FOOTER (FULL WIDTH) -->
+          <div class="border bg-gray-400 pt-4 mt-4 mb-0 items-left rounded-bl-md rounded-br-md w-full">
+            <p class="text-lg font-semibold text-black p-4 items-center pl-8">View all solutions <span
+                class="codicon codicon-chevron-right"></span></p>
+          </div>
+        </div>
+
+
+      </div>
+
+
+      <!-- Resources -->
+      <div class="group relative">
+        <div class="flex items-center cursor-pointer">
+          <h6 class="text-white text-[20px]">Resources</h6>
+          <i class="codicon codicon-chevron-down text-3xl text-white"></i>
+        </div>
+
+        <!-- RESOURCES DROPDOWN -->
+        <div
+          class="absolute left-0 mt-2 invisible grid grid-cols-[40%_30%_30%] gap-3 p-10 group-hover:visible border bg-white w-[50vw] rounded-lg shadow-lg">
+
+
+
+          <!-- FIRST -->
+          <div class="w-full">
+            <p class="text-[12px] text-black pb-4 font-semibold">EXPLORE BY TOPIC</p>
+            <div>
+              <p class="text-lg font-semibold text-black py-2">AI</p>
+              <p class="text-lg font-semibold text-black py-2">Software Development</p>
+              <p class="text-lg font-semibold text-black py-2">DevOps</p>
+              <p class="text-lg font-semibold text-black py-2">Security</p>
+              <p class="text-lg font-semibold text-black py-2 items-center">
+                View all topics <span class="codicon codicon-chevron-right"></span>
+              </p>
+            </div>
+          </div>
+
+          <!-- SECOND -->
+          <div>
+            <p class="text-[12px] text-black pb-4 font-semibold">EXPLORE BY TYPE</p>
+            <div>
+              <p class="text-lg font-semibold text-black py-2">Customer Stories</p>
+              <p class="text-lg font-semibold text-black py-2">Event and Webinars</p>
+              <p class="text-lg font-semibold text-black py-2">Ebooks & Reports</p>
+              <p class="text-lg font-semibold text-black py-2">Business Insights</p>
+              <p class="text-lg font-semibold text-black py-2">Github Skills</p>
+
+            </div>
+          </div>
+
+          <!-- THIRD -->
+          <div class="ml-7">
+            <p class="text-[12px] text-black pb-4 font-semibold">SUPPORT & SERVICES</p>
+            <div>
+              <p class="text-lg font-semibold text-black py-2">Documentation</p>
+              <p class="text-lg font-semibold text-black py-2">Customer Support</p>
+              <p class="text-lg font-semibold text-black py-2">Community Forums</p>
+              <p class="text-lg font-semibold text-black py-2">Trust Centers</p>
+              <p class="text-lg font-semibold text-black py-2">Partners</p>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+
+      <!-- OPEN SOURCE -->
+      <div class="group relative">
+        <div class="flex items-center cursor-pointer">
+          <h6 class="text-white text-[20px]">Open Sources</h6>
+          <i class="codicon codicon-chevron-down text-3xl text-white"></i>
+        </div>
+
+        <!-- RESOURCES DROPDOWN -->
+        <div
+          class="absolute left-0 mt-2 invisible grid grid-cols-[40%_30%_30%] gap-3 p-7 group-hover:visible border bg-white w-[50vw] rounded-lg shadow-lg">
+
+          <!-- FIRST -->
+          <div>
+
+            <p class="text-[12px] text-black pb-4 font-semibold">COMMUNITY</p>
+
+            <div class="grid grid-cols-[50px_1fr] items-center gap-1 pb-6 ">
+              <div class="flex items-center justify-center">
+                <i class="codicon codicon-code-review text-gray-500" style="font-size: 25px;"></i>
+              </div>
+              <div>
+                <h6 class="text-lg font-semibold text-black">GitHub Sponsors</h6>
+                <p class="text-sm text-gray-700">Fund Open Source Developers</p>
+              </div>
+            </div>
+
+          </div>
+
+
+          <!-- SECOND -->
+          <div>
+            <p class="text-[12px] text-black pb-4 font-semibold">EXPLORE BY TYPE</p>
+            <div>
+              <p class="text-lg font-semibold text-black py-2">Security Lab</p>
+              <p class="text-lg font-semibold text-black py-2">Maintainer Community</p>
+              <p class="text-lg font-semibold text-black py-2">Accelerator</p>
+              <p class="text-lg font-semibold text-black py-2">Archive Program</p>
+
+
+            </div>
+          </div>
+
+          <!-- THIRD -->
+          <div class="ml-7">
+            <p class="text-[12px] text-black pb-4 font-semibold">REPOSITORIES</p>
+            <div>
+              <p class="text-lg font-semibold text-black py-2">Topic</p>
+              <p class="text-lg font-semibold text-black py-2">Trending</p>
+              <p class="text-lg font-semibold text-black py-2">Collection</p>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+
+      <!-- ENTERPRISE-->
+      <div class="group relative">
+        <div class="flex items-center cursor-pointer">
+          <h6 class="text-white text-[20px]">Enterprise</h6>
+          <i class="codicon codicon-chevron-down text-3xl text-white"></i>
+        </div>
+
+        <!-- ENTERPRISE DROPDOWN -->
+        <div
+          class="absolute left-0 mt-2 invisible grid grid-cols-[1fr_1fr] gap-3 p-7 group-hover:visible border bg-white w-[40vw] rounded-lg shadow-lg">
+
+          <!-- FIRST -->
+          <div>
+
+            <p class="text-[12px] text-black pb-4 font-semibold">ENTERPRISE SOLUTIONS</p>
+
+            <div class="grid grid-cols-[50px_1fr] items-center gap-1 pb-6 ">
+              <div class="flex items-center justify-center">
+                <i class="codicon codicon-layers text-gray-500" style="font-size: 25px;"></i>
+              </div>
+              <div>
+                <h6 class="text-lg font-semibold text-black">Enterprise Platform</h6>
+                <p class="text-sm text-gray-700">AI-powered developer platform</p>
+              </div>
+            </div>
+
+
+
+          </div>
+
+          <!-- SECOND -->
+
+          <div>
+            <p class="text-[12px] text-black pb-4 font-semibold">AVAILABLE ADD-ONS</p>
+
+            <div class="grid grid-cols-[50px_1fr] items-center gap-1 pb-6 ">
+              <div class="flex items-center justify-center">
+                <i class="codicon codicon-workspace-trusted text-gray-500" style="font-size: 25px;"></i>
+              </div>
+              <div>
+                <h6 class="text-lg font-semibold text-black">GitHub Advanced Security</h6>
+                <p class="text-sm text-gray-700">Enterprise-grade security features</p>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-[50px_1fr] items-center gap-1 pb-6 ">
+              <div class="flex items-center justify-center">
+                <i class="codicon codicon-copilot text-gray-500" style="font-size: 25px;"></i>
+              </div>
+              <div>
+                <h6 class="text-lg font-semibold text-black">Copilot for Business</h6>
+                <p class="text-sm text-gray-700">Enterprise-grade AI features</p>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-[50px_1fr] items-center gap-1 pb-6 ">
+              <div class="flex items-center justify-center">
+                <i class="codicon codicon-comment-discussion text-gray-500" style="font-size: 25px;"></i>
+              </div>
+              <div>
+                <h6 class="text-lg font-semibold text-black">Premium Support</h6>
+                <p class="text-sm text-gray-700">Enterprise-grade 24/7 support</p>
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+
+      <div class="text-white text-[20px]">Pricing</div>
+
+
+
+
+
+    </div>
+
+    <div class="flex items-center justify-between gap-5">
+
+      <div class="relative w-[200px] hidden lg:flex">
+        <!-- 👇 the Codicon -->
+        <i class="codicon codicon-search absolute left-3 top-1/2 -translate-y-1/2 text-[#8b949e] text-[18px]"></i>
+
+        <!-- 👇 the Input -->
+        <input type="text" placeholder="Search or jump to..."
+          class="w-full bg-[#262e47] border border-white rounded-md text-[#c9d1d9] pl-10 pr-3 py-2 text-sm focus:outline-none focus:ring-1 focus:ring-[#238636]" />
+      </div>
+
+
+      <div class="hidden lg:flex">
+        <p>Sign in</p>
+      </div>
+
+      <button class="border-1 border-white bg-[#010336] py-2 px-4 rounded-md hidden lg:flex">
+        <p>Sign up</p>
+      </button>
+
+
+    </div>
+
+    <div class="flex justify-between w-full items-center px-3 lg:hidden">
+
+      <div class="">
+        <!-- Hamburger Button -->
+        <button onclick="toggleMenu()" class="lg:hidden flex items-center gap-2 border border-gray-600 p-2 rounded-md">
+          <i id="menuIcon" class="codicon codicon-three-bars text-2xl"></i>
+        </button>
+
+        <!-- Hidden Mobile Menu (Clean, Smooth Animation) -->
+        <div id="mobileMenu"
+          class="hidden lg:hidden flex-col gap-4 border-t border-gray-700 bg-[#151b23] overflow-hidden transition-all duration-500 ease-in-out">
+          <div class="flex flex-col gap-3 p-5">
+            <p class="text-lg font-semibold cursor-pointer">Platform</p>
+            <p class="text-lg font-semibold cursor-pointer">Solution</p>
+            <p class="text-lg font-semibold cursor-pointer">Resources</p>
+            <p class="text-lg font-semibold cursor-pointer">Open Source</p>
+            <p class="text-lg font-semibold cursor-pointer">Enterprise</p>
+            <p class="text-lg font-semibold cursor-pointer">Pricing</p>
+
+            <!-- Search -->
+            <div class="relative w-full mt-3">
+              <i class="codicon codicon-search absolute left-3 top-1/2 -translate-y-1/2 text-[#8b949e] text-[18px]"></i>
+              <input type="text" placeholder="Search or jump to..."
+                class="w-full bg-[#262e47] border border-white rounded-md text-[#c9d1d9] pl-10 pr-3 py-2 text-sm focus:outline-none focus:ring-1 focus:ring-[#238636]" />
+            </div>
+
+            <!-- Buttons -->
+            <div class="flex flex-col gap-3 mt-4">
+              <button class="border border-white bg-[#010336] py-2 px-4 rounded-md">
+                Sign up
+              </button>
+              <p class="text-center">Sign in</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="codicon codicon-github-inverted" style="font-size: 30px;"></div>
+
+      <div class="">
+        <button class="border border-white bg-[#010336] py-2 px-4 rounded-md">
+          Sign up
+        </button>
+      </div>
+
+    </div>
+
+
+
+
+
+  </header>
+
+  <!-- MAIN SECTION (normal, not fixed) -->
+  <main class="text-center px-8 pt-40 pb-20">
+    <h1 class="text-[6vw] font-bold w-[70%] mx-auto font-Mona ">
+      Build and ship software on a single, collaborative platform
+    </h1>
+    <p class="mt-4 font-semibold text-[3vw]">
+      Join the world’s most widely adopted AI-powered developer platform.
+    </p>
+
+
+  </main>
+
+  <div class="w-[90%] mx-auto gap-10 mb-20 items-center md:flex ">
+    <div class=" w-[90%] mx-auto bg-white rounded-[8px] p-2 items-center mb-10 sm:flex justify-between md:mb-0">
+      <p class="text-[#383d42] px-6 text-left mb-4 md:text-[20px]">Enter your email</p>
+      <p class="bg-[#116329] rounded-[8px] p-3 px-9 text-center font-bold md:text-[20px] text-white">Sign up for GitHub
+      </p>
+    </div>
+
+    <div class="w-[90%] mx-auto sm:w-[70%]">
+      <p class="border-2 border-white text-center bg-[#191b41] rounded-[8px] p-4 px-8 font-bold">
+        Try GitHub Copilot
+      </p>
+    </div>
+  </div>
+
+  <!-- VIDEO -->
+  <div class="flex justify-center items-center w-full">
+    <video id="mainVideo" src="./images/code-1_desktop-7ab52aea3358.mp4" autoplay muted loop playsinline
+      class="rounded-[20px] overflow-hidden shadow-2xl w-[90%] border-t-[20px] border-l-[20px] border-r-[20px] border-b-0 border-[#9690e7] shadow-[0_0_50px_20px_#9a94ff]"
+      style="border-radius: 20px;">
+    </video>
+  </div>
+
+  <!-- BUTTON -->
+
+  <div class="w-full bg-[#0c101c]">
+    <div class="items-center justify-center w-[100%] mt-10 pt-20 mx-auto hidden md:flex">
+      <div
+        class="flex w-[70%] mx-auto gap-[10px] bg-[#0b0f1e] border border-white rounded-[100px] py-1 px-5 text-center justify-center items-center">
+
+        <p data-video="./images/code-1_desktop-7ab52aea3358.mp4"
+          class="video-btn text-white rounded-[90px] px-3 py-2 text-[18px] cursor-pointer transition-all duration-300">
+          Code
+        </p>
+        <p data-video="./images/code-1_desktop-7ab52aea3358.mp4"
+          class="video-btn text-white rounded-[90px] px-3 py-2 text-[18px] cursor-pointer transition-all duration-300">
+          Plan
+        </p>
+        <p data-video="./images/code-1_desktop-7ab52aea3358.mp4"
+          class="video-btn text-white rounded-[90px] px-5 py-2 text-[18px] cursor-pointer transition-all duration-300">
+          Collaborate
+        </p>
+        <p data-video="./images/code-1_desktop-7ab52aea3358.mp4"
+          class="video-btn text-white rounded-[90px] px-3 py-2 text-[18px] cursor-pointer transition-all duration-300">
+          Automate
+        </p>
+        <p data-video="./images/code-1_desktop-7ab52aea3358.mp4"
+          class="video-btn text-white rounded-[90px] px-3 py-2 text-[18px] cursor-pointer transition-all duration-300">
+          Secure
+        </p>
+
+      </div>
+
+
+
+
+    </div>
+
+
+
+    <div class="mx-auto mt-10 justify-center w-full text-center mb-20">
+      <p data-video="./images/code-1_desktop-7ab52aea3358.mp4"
+        class="video-btn w-[10%] border text-white rounded-[90px] p-2 text-[2vw] my-5 mx-auto flex md:hidden">
+        Secure
+      </p>
+      <p class="text-[#8b949e] font-semibold text-[2.4vw]">Track and coordinate your work with GitHub Issues, GitHub
+        Projects, and insights.</p>
+    </div>
+
+    <div class="overflow-hidden w-full mx-auto">
+      <div class="flex gap-10 py-10 w-full animate-[slide_25s_linear_infinite]">
+        <img src="./img/download (3).svg" alt=""
+          class="w-[150px] brightness-0 invert-[55%] sepia-[5%] saturate-[300%] hue-rotate-[169deg] brightness-[90%] contrast-[90%]">
+        <img src="./img/download (1).svg" alt=""
+          class="w-[150px] brightness-0 invert-[55%] sepia-[5%] saturate-[300%] hue-rotate-[169deg] brightness-[90%] contrast-[90%]">
+        <img src="./img/download (2).svg" alt=""
+          class="w-[150px] brightness-0 invert-[55%] sepia-[5%] saturate-[300%] hue-rotate-[169deg] brightness-[90%] contrast-[90%]">
+        <img src="./img/download (4).svg" alt=""
+          class="w-[150px] brightness-0 invert-[55%] sepia-[5%] saturate-[300%] hue-rotate-[169deg] brightness-[90%] contrast-[90%]">
+        <img src="./img/download (5).svg" alt=""
+          class="w-[150px] brightness-0 invert-[55%] sepia-[5%] saturate-[300%] hue-rotate-[169deg] brightness-[90%] contrast-[90%]">
+        <img src="./img/download (6).svg" alt=""
+          class="w-[150px] brightness-0 invert-[55%] sepia-[5%] saturate-[300%] hue-rotate-[169deg] brightness-[90%] contrast-[90%]">
+        <img src="./img/download.svg" alt=""
+          class="w-[150px] brightness-0 invert-[55%] sepia-[5%] saturate-[300%] hue-rotate-[169deg] brightness-[90%] contrast-[90%]">
+        <img src="./img/imgi_1_universe_25_1-logo-5eb07c67b514.svg" alt=""
+          class="w-[120px] brightness-0 invert-[55%] sepia-[5%] saturate-[300%] hue-rotate-[169deg] brightness-[90%] contrast-[90%]">
+
+        <!-- duplicate set for seamless looping -->
+        <img src="./img/download (1).svg" alt=""
+          class="w-[150px] brightness-0 invert-[55%] sepia-[5%] saturate-[300%] hue-rotate-[169deg] brightness-[90%] contrast-[90%]">
+        <img src="./img/download (2).svg" alt=""
+          class="w-[150px] brightness-0 invert-[55%] sepia-[5%] saturate-[300%] hue-rotate-[169deg] brightness-[90%] contrast-[90%]">
+        <img src="./img/download (3).svg" alt=""
+          class="w-[150px] brightness-0 invert-[55%] sepia-[5%] saturate-[300%] hue-rotate-[169deg] brightness-[90%] contrast-[90%]">
+        <img src="./img/download (4).svg" alt=""
+          class="w-[150px] brightness-0 invert-[55%] sepia-[5%] saturate-[300%] hue-rotate-[169deg] brightness-[90%] contrast-[90%]">
+
+        <img src="./img/download (5).svg" alt=""
+          class="w-[150px] brightness-0 invert-[55%] sepia-[5%] saturate-[300%] hue-rotate-[169deg] brightness-[90%] contrast-[90%]">
+        <img src="./img/download (6).svg" alt=""
+          class="w-[150px] brightness-0 invert-[55%] sepia-[5%] saturate-[300%] hue-rotate-[169deg] brightness-[90%] contrast-[90%]">
+        <img src="./img/download.svg" alt=""
+          class="w-[150px] brightness-0 invert-[55%] sepia-[5%] saturate-[300%] hue-rotate-[169deg] brightness-[90%] contrast-[90%]">
+        <img src="./img/imgi_1_universe_25_1-logo-5eb07c67b514.svg" alt=""
+          class="w-[120px] brightness-0 invert-[55%] sepia-[5%] saturate-[300%] hue-rotate-[169deg] brightness-[90%] contrast-[90%]">
+      </div>
+
+    </div>
+
+    <div class=" w-full">
+
+      <div class="border border-gray-700 w-full text-center pt-30 bg-[url(/img/imgi_5_particles-de1dd20f3008.png)]">
+
+        <img src="./img/one_head-removebg-preview.png" alt="" class="w-[250px] mx-auto">
+
+        <p class="text-white text-[5vw] font-bold">Accelerate performance</p>
+
+        <div class="w-[52%] mx-auto mb-20">
+          <span class="text-[2vw] text-[#a9aab3] text-center ">With GitHub Copilot embedded throughout the
+            platform, you can simplify your toolchain, automate tasks, and improve the developer experience.</span>
+        </div>
+
+        <!-- Background Wrapper -->
+        <div class="justify-center items-center">
+
+          <!-- Foreground Content -->
+          <div
+            class="flex justify-center items-center w-[95%] border border-white border-b-0 mx-auto rounded-tr-[20px] rounded-tl-[20px] bg-gradient-to-b from-[#9e79e1] from-[20%] via-[#232537] via-[50%] via-[#403d66] via-[85%] to-[#3d5c87] to-[90%] ">
+            <div class="mt-10 p-8">
+              <video id="mainVideo" src="./images/github-copilot-agent-mode.mp4" autoplay muted loop playsinline
+                class="rounded-[20px] overflow-hidden shadow-2xl w-[50%] border-8 border-[#8377d1] mx-auto"
+                style="border-radius: 20px;">
+              </video>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div class="w-full">
+        <div class="md:w-[95%] border border-transparent grid md:grid-cols-[60%_40%] m-auto">
+          <div class="border border-gray-700 border-r-0 w-full text-left p-8 mx-auto">
+            <span class="text-white text-[2.5vw] font-bold">
+              Work 55% faster.
+              <a href="#" class="text-blue-500 underline">1</a>
+              <span class="text-[#8b949e]">Increase productivity with AI-powered coding assistance, including code
+                completion, chat, and more.</span>
+            </span>
+
+            <div class="pt-20 relative z-10 flex text-center">
+              <a href="https://github.com/features/copilot"
+                class="text-blue-500 text-[20px] underline pointer-events-auto">
+                Explore GitHub Copilot
+              </a>
+              <i class="codicon codicon-chevron-right text-blue-500 text-[20px]"></i>
+            </div>
+          </div>
+
+          <div class="w-full border border-gray-800 mx-auto">
+            <div class="pt-20 relative pl-8">
+              <img src="./img/logo-duolingo-14477f9e54a6.svg" alt="">
+            </div>
+            <div class="text-left p-8 mx-auto">
+              <span class="text-white text-[20px]">
+                Duolingo boosts developer speed by 25% with GitHub Copilot
+              </span>
+            </div>
+            <div class="border border-gray-800 p-8 mx-auto">
+              <div class="pt-20 relative pl-8">
+                <img src="./img/logo-gartner-aa8c2e452b64.svg" alt="">
+              </div>
+              <div class="text-left p-8 mx-auto">
+                <span class="text-white text-[20px]">
+                  Duolingo boosts developer speed by 25% with GitHub Copilot
+                </span>
+              </div>
+              <div class="pt-20 relative z-10 flex">
+                <a href="https://github.com/features/copilot"
+                  class="text-blue-500 text-[20px] underline pointer-events-auto">
+                  Explore GitHub Copilot
+                </a>
+                <i class="codicon codicon-chevron-right text-gray-500 text-[20px]"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="w-full border border-gray-700 border-r-0 border-l-0 mx-auto">
+        <div class="border border-transparent grid md:grid-cols-2 w-[95%] mx-auto">
+          <div class="border-2 border-transparent p-4 pt-20">
+            <div class="border border-transparent w-full text-left p-8  gap-5 mx-auto">
+              <div class="pt-5">
+                <!-- FAQ 1 -->
+                <div class="border-b border-gray-300 py-2">
+                  <button class="w-full flex justify-between items-center text-left focus:outline-none"
+                    onclick="toggleAnswer(this)">
+                    <h5 class="text-white text-[24px] font-bold">Automate any Workflow</h5>
+                    <span
+                      class="codicon codicon-add text-[#a371f7] text-3xl font-bold transition-transform duration-500"></span>
+                  </button>
+                  <div class="answer overflow-hidden transition-[max-height] duration-500 max-h-0">
+                    <p class="text-[#8b949e] text-[20px]">
+                      Optimize your process with simple and secured CI/CD.
+                    </p>
+                    <div class="py-5 relative z-10 flex items-center text-center gap-2">
+                      <a href="https://github.com/features/copilot"
+                        class="text-blue-500 text-[20px] underline pointer-events-auto">
+                        Explore GitHub Copilot
+                      </a>
+                      <i class="codicon codicon-chevron-right text-blue-500 text-[20px]"></i>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- FAQ 2 -->
+                <div class="border-b border-gray-300 py-2">
+                  <button class="w-full flex justify-between items-center text-left focus:outline-none"
+                    onclick="toggleAnswer(this)">
+                    <h5 class="text-white text-[24px] font-bold">Get up and running in seconds</h5>
+                    <span
+                      class="codicon codicon-add text-[#a371f7] text-3xl font-bold transition-transform duration-500"></span>
+                  </button>
+                  <div class="answer overflow-hidden transition-[max-height] duration-500 max-h-0">
+                    <p class="text-[#8b949e] text-[20px]">
+                      Start building instantly with a comprehensive dev environment in the cloud.
+                    </p>
+                    <div class="py-5 relative z-10 flex items-center text-center gap-2">
+                      <a href="https://github.com/features/actions"
+                        class="text-blue-500 text-[20px] underline pointer-events-auto">
+                        Checkout Github Codespaces
+                      </a>
+                      <i class="codicon codicon-chevron-right text-blue-500 text-[20px]"></i>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- FAQ 3 -->
+                <div class="border-b border-gray-300 py-2">
+                  <button class="w-full flex justify-between items-center text-left focus:outline-none"
+                    onclick="toggleAnswer(this)">
+                    <h5 class="text-white text-[24px] font-bold">Build on the Go</h5>
+                    <span
+                      class="codicon codicon-add text-[#a371f7] text-3xl font-bold transition-transform duration-500"></span>
+                  </button>
+                  <div class="answer overflow-hidden transition-[max-height] duration-500 max-h-0">
+                    <p class="text-[#8b949e] text-[20px]">
+                      Manage projects and chat with GitHub Copilot from anywhere.
+                    </p>
+                    <div class="py-5 relative z-10 flex items-center text-center gap-2">
+                      <a href="https://github.com/features/codespaces"
+                        class="text-blue-500 text-[20px] underline pointer-events-auto">
+                        Download Github Mobile
+                      </a>
+                      <i class="codicon codicon-chevron-right text-blue-500 text-[30px] "></i>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- FAQ 4 -->
+                <div class="border-b border-gray-300 py-2">
+                  <button class="w-full flex justify-between items-center text-left focus:outline-none"
+                    onclick="toggleAnswer(this)">
+                    <h5 class="text-white text-[24px] font-bold">Integrate the tools you love</h5>
+                    <span
+                      class="codicon codicon-add text-[#a371f7] text-3xl font-bold transition-transform duration-500"></span>
+                  </button>
+                  <div class="answer overflow-hidden transition-[max-height] duration-500 max-h-0">
+                    <p class="text-[#8b949e] text-[20px]">
+                      Sync with 17,000+ integrations and a growing library of Copilot Extensions.
+                    </p>
+                    <div class="py-5 relative z-10 flex items-center text-center gap-2">
+                      <a href="https://github.com/features/security"
+                        class="text-blue-500 text-[20px] underline pointer-events-auto">
+                        Visit Github Marketplaces
+                      </a>
+                      <i class="codicon codicon-chevron-right justify-center text-blue-500 text-[30px] font-bold"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="border border-transparent">
+
+            <img src="./images/imgi_8_accordion-1-ce487d44c0bf.webp" alt="">
+
+          </div>
+        </div>
+
+
+      </div>
+
+      <div class="border border-gray-700 border-l-0 border-r-0 w-full">
+
+        <div class="text-center w-[50%] justify-center text-center items-center mx-auto py-40">
+          <img src="./img/second_head-removebg-preview.png" alt="" class="w-[200px] mx-auto">
+          <h2 class="text-[4vw] font-bold">
+            Built-in application security where found means fixed
+          </h2>
+          <span class="text-[2vw]">
+            Use AI to find and fix vulnerabilities—freeing your teams to ship more secure software faster.
+          </span>
+        </div>
+
+        <div
+          class="grid md:grid-cols-2 border border-gray-800 mx-auto w-[95%] bg-gradient-to-b from-[#16191f] via-[#16191f] to-[#1d2f44]">
+
+          <!-- Left column -->
+          <div class="p-20 pt-50">
+            <span class="text-white text-[5vw] font-bold md:text-[24px]">
+              Apply fixes in seconds.
+              <span class="text-[#8b949e]">
+                Spend less time fixing vulnerabilities and more time building features with Copilot Autofix.
+              </span>
+            </span>
+
+            <div class="pt-5 relative z-10 flex items-center gap-2">
+              <a href="https://github.com/features/copilot"
+                class="text-blue-500 text-[20px] underline pointer-events-auto">
+                Explore GitHub Copilot
+              </a>
+              <i class="codicon codicon-chevron-right text-blue-500" style="--codicon-font-size: 28px;"></i>
+            </div>
+          </div>
+
+          <!-- Right column -->
+          <div class="justify-center items-center p-10 pt-20">
+            <div class="border-15 border-[#e4eaff] rounded-[30px]">
+              <img src="./images/imgi_12_hero-64ecd484397f.webp" alt="Copilot" class="rounded-[15px] max-w-full h-auto">
+            </div>
+          </div>
+
+        </div>
+
+
+      </div>
+
+      <div class="border border-gray-700 border-l-0 border-r-0 w-full">
+
+        <div
+          class="grid md:grid-cols-3 border border-gray-800 mx-auto w-[95%] bg-gradient-to-b from-[#16191f] via-[#16191f] to-[#1d2f44]">
+          <!-- First   -->
+
+          <div class="border-r-2 border-gray-300 p-8">
+            <span class="text-white text-[18px] font-semibold text-left">
+              Solve security debt.
+              <span class="text-[#8b949e]">
+                Leverage AI-assisted security campaigns to reduce application vulnerabilities and zero-day attacks.
+              </span>
+            </span>
+
+            <div class="pt-5 relative z-10 flex items-center gap-2">
+              <a href="https://github.com/features/copilot"
+                class="text-blue-500 text-[18px] underline pointer-events-auto">
+                Discover Security Campaigns
+              </a>
+              <i class="codicon codicon-chevron-right text-blue-500" style="--codicon-font-size: 28px;"></i>
+            </div>
+
+            <div
+              class="items-right border-t-1 border-l-1 mt-10 bg-[url [/images/imgi_13_pillar-1-dd667a921f55.webp] rounded-tl-[30px] ml-20 bg-[url(/images/imgi_13_pillar-1-dd667a921f55.webp)]">
+              <img src="./images/imgi_13_pillar-1-dd667a921f55.webp" alt="" class="w-full ml-7 rounded-tl-[15px]">
+            </div>
+          </div>
+
+          <!-- Second -->
+          <div class="border-r-2 border-gray-300 p-8">
+            <span class="text-white text-[18px] font-semibold text-left">
+              Dependencies you can depend on.
+              <span class="text-[#8b949e]">
+                Update vulnerable dependencies with supported fixes for breaking changes.
+              </span>
+            </span>
+
+            <div class="pt-5 relative z-10 flex items-center gap-2">
+              <a href="https://github.com/features/copilot"
+                class="text-blue-500 text-[18px] underline pointer-events-auto">
+                Discover Security Campaigns
+              </a>
+              <i class="codicon codicon-chevron-right text-blue-500" style="--codicon-font-size: 28px;"></i>
+            </div>
+
+            <div
+              class="items-right border-t-1 border-l-1 mt-10 bg-[url [/images/imgi_13_pillar-1-dd667a921f55.webp] rounded-tl-[30px] ml-20 bg-[url(/images/imgi_13_pillar-1-dd667a921f55.webp)]">
+              <img src="./images/imgi_13_pillar-1-dd667a921f55.webp" alt="" class="w-full ml-7 rounded-tl-[15px]">
+            </div>
+
+
+          </div>
+
+          <!-- Third -->
+          <div class="border-r-2 border-gray-300 p-8">
+            <span class="text-white text-[18px] font-semibold text-left">
+              Dependencies you can depend on.
+              <span class="text-[#8b949e]">
+                Update vulnerable dependencies with supported fixes for breaking changes.
+              </span>
+            </span>
+
+            <div class="pt-5 relative z-10 flex items-center gap-2">
+              <a href="https://github.com/features/copilot"
+                class="text-blue-500 text-[18px] underline pointer-events-auto">
+                Discover Security Campaigns
+              </a>
+              <i class="codicon codicon-chevron-right text-blue-500" style="--codicon-font-size: 28px;"></i>
+            </div>
+
+            <div
+              class="items-right border-t-1 border-l-1 mt-10 bg-[url [/images/imgi_13_pillar-1-dd667a921f55.webp] rounded-tl-[30px] ml-20 bg-[url(/images/imgi_13_pillar-1-dd667a921f55.webp)]">
+              <img src="./images/imgi_13_pillar-1-dd667a921f55.webp" alt="" class="w-full ml-7 rounded-tl-[15px]">
+            </div>
+
+          </div>
+        </div>
+
+        <div class="grid md:grid-cols-2 border border-[#545454] mx-auto w-[95%] ">
+          <!-- Right column -->
+          <div class="justify-center items-center p-10 py-20 border-r-1 border-[#545454]">
+            <div>
+              <h1 class="text-[4vw] font-bold">
+                70% MTTR reduction
+              </h1>
+              <h5 class="text-[2vw] text-[#8b949e]">
+                with Copilot Autofix
+                <span class="underline text-[14px] text-blue-500"> <a href="">1</a></span>
+              </h5>
+            </div>
+          </div>
+
+          <hr class="text-2xl text-gray-500 md:hidden">
+
+          <!-- Left Column  -->
+          <div class="justify-center items-center p-10 pt-20">
+            <div>
+              <h1 class="text-[4vw] font-bold">
+                8.3M secrets leaks stopped
+              </h1>
+              <h5 class="text-[2vw] text-[#8b949e]">
+                in the past 12 month with push protection
+                <span class="underline text-[14px] text-blue-500"> <a href="">1</a></span>
+              </h5>
+            </div>
+          </div>
+
+
+        </div>
+
+
+      </div>
+
+
+
+    </div>
+
+    <div class="w-full text-center pt-40">
+
+      <div class="items-center">
+
+        <img src="./img/mark-removebg-preview.png" alt="" class="w-[100px] mx-auto">
+
+        <p class="text-[6vw] font-semibold">Work together, achieve more</p>
+
+        <p class="text-[3vw] mx-auto w-[50%] text-[##8b949e]">From planning and discussion to code review, GitHub keeps
+          your team’s conversation and context next to your code.</p>
+
+      </div>
+
+      <div
+        class="flex justify-center items-center mt-30 w-[95%] border border-white border-b-0 mx-auto rounded-tr-[30px] rounded-tl-[30px] bg-gradient-to-b from-[#16191f] via-[#212333] to-[#355478]">
+
+        <div class="mt-10 border-8 rounded-tr-[30px] rounded-tl-[30px] border-white border-b-0 w-[80%] mx-auto">
+          <img src="./images/imgi_16_hero-961322485af6.webp" alt="" class="rounded-tr-[30px] rounded-tl-[30px]">
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="w-full  bg-[#0d1117] border-t-1  border-b-1 border-[#545454]">
+
+    <div class="grid md:grid-cols-2 border-1 border-[#545454] mx-auto w-[95%] ">
+      <!-- Right column -->
+      <div class="justify-center items-center p-10 py-15 border-r-1 border-[#545454]">
+        <div>
+
+          <span class="text-white text-[2.7vw] font-bold text-left">
+            Plan with clarity.
+            <span class="text-[#8b949e]">
+              Organize everything from high-level roadmaps to everyday tasks.
+            </span>
+          </span>
+          <div class="pt-5 relative z-10 flex items-center gap-2">
+            <a href="https://github.com/features/copilot"
+              class="text-blue-500 text-[18px] underline pointer-events-auto">
+              Explore GitHub Projects
+            </a>
+            <i class="codicon codicon-chevron-right text-blue-500" style="--codicon-font-size: 28px;"></i>
+          </div>
+        </div>
+      </div>
+
+      <hr class="text-2xl text-gray-500 md:hidden">
+
+      <!-- Left Column  -->
+      <div class="justify-center items-center p-10 pt-20">
+        <div>
+          <h1 class="text-[60px] font-semibold text-[#56d364]">
+            “
+          </h1>
+          <h1 class="text-[2.7vw] font-semibold">
+            It helps us onboard new software engineers and get them productive right away. We have all our source code,
+            issues, and pull requests in one place... GitHub is a complete platform that frees us from menial tasks and
+            enables us to do our best work.
+          </h1>
+          <h5 class="text-[18px] font-semibold pt-10">
+            Fabian Faulhaber
+          </h5>
+          <h5 class="text-[18px] text-[#8b949e]">
+            Application manager at Mercedes-Benz
+          </h5>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="w-full border border-gray-700 bg-[#0d1117] border-r-0 border-l-0 mx-auto">
+    <div class="border border-transparent grid md:grid-cols-2 w-[95%] mx-auto">
+      <div class="border-2 border-transparent p-4 pt-20">
+        <div class="border border-transparent w-full text-left p-8  gap-5 mx-auto">
+          <div class="pt-5">
+            <!-- FAQ 1 -->
+            <div class="border-b border-gray-300 py-2">
+              <button class="w-full flex justify-between items-center text-left focus:outline-none"
+                onclick="toggleAnswer(this)">
+                <h5 class="text-white text-[24px] font-bold">Automate any Workflow</h5>
+                <span
+                  class="codicon codicon-add text-[#a371f7] text-3xl font-bold transition-transform duration-500"></span>
+              </button>
+              <div class="answer overflow-hidden transition-[max-height] duration-500 max-h-0">
+                <p class="text-[#8b949e] text-[20px]">
+                  Optimize your process with simple and secured CI/CD.
+                </p>
+                <div class="py-5 relative z-10 flex items-center text-center gap-2">
+                  <a href="https://github.com/features/copilot"
+                    class="text-blue-500 text-[20px] underline pointer-events-auto">
+                    Explore GitHub Copilot
+                  </a>
+                  <i class="codicon codicon-chevron-right text-blue-500 text-[20px]"></i>
+                </div>
+              </div>
+            </div>
+
+            <!-- FAQ 2 -->
+            <div class="border-b border-gray-300 py-2">
+              <button class="w-full flex justify-between items-center text-left focus:outline-none"
+                onclick="toggleAnswer(this)">
+                <h5 class="text-white text-[24px] font-bold">Get up and running in seconds</h5>
+                <span
+                  class="codicon codicon-add text-[#a371f7] text-3xl font-bold transition-transform duration-500"></span>
+              </button>
+              <div class="answer overflow-hidden transition-[max-height] duration-500 max-h-0">
+                <p class="text-[#8b949e] text-[20px]">
+                  Start building instantly with a comprehensive dev environment in the cloud.
+                </p>
+                <div class="py-5 relative z-10 flex items-center text-center gap-2">
+                  <a href="https://github.com/features/actions"
+                    class="text-blue-500 text-[20px] underline pointer-events-auto">
+                    Checkout Github Codespaces
+                  </a>
+                  <i class="codicon codicon-chevron-right text-blue-500 text-[20px]"></i>
+                </div>
+              </div>
+            </div>
+
+            <!-- FAQ 3 -->
+            <div class="border-b border-gray-300 py-2">
+              <button class="w-full flex justify-between items-center text-left focus:outline-none"
+                onclick="toggleAnswer(this)">
+                <h5 class="text-white text-[24px] font-bold">Build on the Go</h5>
+                <span
+                  class="codicon codicon-add text-[#a371f7] text-3xl font-bold transition-transform duration-500"></span>
+              </button>
+              <div class="answer overflow-hidden transition-[max-height] duration-500 max-h-0">
+                <p class="text-[#8b949e] text-[20px]">
+                  Manage projects and chat with GitHub Copilot from anywhere.
+                </p>
+                <div class="py-5 relative z-10 flex items-center text-center gap-2">
+                  <a href="https://github.com/features/codespaces"
+                    class="text-blue-500 text-[20px] underline pointer-events-auto">
+                    Download Github Mobile
+                  </a>
+                  <i class="codicon codicon-chevron-right text-blue-500 text-[30px] "></i>
+                </div>
+              </div>
+            </div>
+
+            <!-- FAQ 4 -->
+            <div class="border-b border-gray-300 py-2">
+              <button class="w-full flex justify-between items-center text-left focus:outline-none"
+                onclick="toggleAnswer(this)">
+                <h5 class="text-white text-[24px] font-bold">Integrate the tools you love</h5>
+                <span
+                  class="codicon codicon-add text-[#a371f7] text-3xl font-bold transition-transform duration-500"></span>
+              </button>
+              <div class="answer overflow-hidden transition-[max-height] duration-500 max-h-0">
+                <p class="text-[#8b949e] text-[20px]">
+                  Sync with 17,000+ integrations and a growing library of Copilot Extensions.
+                </p>
+                <div class="py-5 relative z-10 flex items-center text-center gap-2">
+                  <a href="https://github.com/features/security"
+                    class="text-blue-500 text-[20px] underline pointer-events-auto">
+                    Visit Github Marketplaces
+                  </a>
+                  <i class="codicon codicon-chevron-right justify-center text-blue-500 text-[30px] font-bold"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="border border-transparent">
+
+        <img src="./images/imgi_8_accordion-1-ce487d44c0bf.webp" alt="">
+
+      </div>
+    </div>
+
+
+
+
+  </div>
+
+  <div class="w-full mx-auto bg-[#0d1117] ">
+
+    <div class="w-[95%] bg-[#0d1117] grid lg:grid-cols-[40%_60%] mx-auto py-20">
+
+      <div class="w-[100%] mb-10">
+
+        <i class="codicon codicon-github-inverted text-white" style="font-size: 25px;"></i>
+
+        <p class="text-3xl text-white">GitHub</p>
+
+        <div class="mt-5">
+          <p class="font-bold">Subscribe to our developer newsletter</p>
+          <p class="text-[#7a8189] font-semibold">Get tips, technical guides, and best practices. Twice a month.</p>
+        </div>
+
+        <div class=" mt-6">
+
+          <p class="border inline border-white rounded-lg  px-6 py-3 text-center">Subscribe</p>
+
+        </div>
+
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-4">
+
+        <div class="text-[#7a8189]">
+          <strong>Platform</strong>
+          <div class="py-3 leading-[40px]">
+            <p>Features</p>
+            <p>Enterprise</p>
+            <p>Copilot</p>
+            <p>AI</p>
+            <p>Security</p>
+            <p>Pricing</p>
+            <p>Team</p>
+            <p>Resources</p>
+            <p>Roadmap</p>
+            <p>Compare GitHub</p>
+          </div>
+        </div>
+
+        <div class="text-[#7a8189]">
+          <strong>Ecosystem</strong>
+          <div class="py-3 leading-[40px]">
+            <p>Developer API</p>
+            <p>Partners</p>
+            <p>Education</p>
+            <p>AI</p>
+            <p>GitHub CLI</p>
+            <p>GitHub Desktop</p>
+            <p>GitHub Mobile</p>
+            <p>GitHub Marketplace</p>
+            <p>MCP Registry</p>
+            <p>Compare GitHub</p>
+          </div>
+        </div>
+
+        <div class="text-[#7a8189]">
+          <strong>Support</strong>
+          <div class="py-3 leading-[40px]">
+            <p>Docs</p>
+            <p>Community Forum</p>
+            <p>Professional Services</p>
+            <p>Premium Support</p>
+            <p>Skills</p>
+            <p>Status</p>
+            <p>Contact GitHub</p>
+          </div>
+        </div>
+
+        <div class="text-[#7a8189]">
+          <strong>Company</strong>
+          <div class="py-3 leading-[40px]">
+            <p>About</p>
+            <p>Why GitHub</p>
+            <p>Customer stories</p>
+            <p>Blog</p>
+            <p>The ReadME Project</p>
+            <p>Careers</p>
+            <p>Newsroom</p>
+            <p>Inclusion</p>
+            <p>Social Impact</p>
+            <p>Shop</p>
+          </div>
+        </div>
+
+
+      </div>
+
+    </div>
+
+
+
+  </div>
+
+  </div>
+
+  <div class="bg-[#151b23]">
+
+    <div
+      class="w-[90%] mx-auto text-gray-500 border-0 border-gray-800 p-4 bg-[#151b23] grid gap-10 md:grid-cols-2 md:w-[95%]">
+
+      <div class="w-[100%] md:w-full">
+
+        <div class="flex gap-2 text-[1.7vw] md:text-[15px] md:mb-4 md:w-[70%]">
+          <p>© 2025 GitHub, Inc.</p>
+          <p>Terms</p>
+          <p>Privacy (Updated 02/2024)</p>
+          <p>Sitemap</p>
+          <p>What is Git?</p>
+          <p>Manage cookies</p>
+          <p>Do not share my personal information</p>
+        </div>
+      </div>
+
+      <div class="w-[40%] md:w-[30%]">
+        <div
+          class="flex gap-4 w-[1.8vw] brightness-0 invert-[55%] sepia-[5%] saturate-[300%] hue-rotate-[169deg] brightness-[90%] contrast-[90%] md:w-auto">
+          <img src="./images/download (15).svg" alt="">
+          <img src="./images/download (18).svg" alt="">
+          <img src="./images/download (14).svg" alt="">
+          <img src="./images/download (19).svg" alt="">
+          <img src="./images/download (17).svg" alt="">
+          <img src="./images/download (16).svg" alt="">
+          <img src="./images/download (13).svg" alt="">
+
+          <div>
+            <p class="text-[1.5vw]">English</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+  <!-- Slideshow keyframes -->
+  <style>
+    @keyframes slide {
+      0% {
+        transform: translateX(0);
+      }
+
+      100% {
+        transform: translateX(-100%);
+      }
+    }
+  </style>
+
+
+
+  </div>
+
+
+
+  <!-- Scroll Script -->
+  <script>
+    const navbar = document.getElementById("navbar");
+
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 50) {
+        navbar.classList.add("bg-[#0d1117]", "border-gray-700", "shadow-lg");
+        navbar.classList.remove("bg-transparent", "border-transparent");
+      } else {
+        navbar.classList.remove("bg-[#0d1117]", "border-gray-700", "shadow-lg");
+        navbar.classList.add("bg-transparent", "border-transparent");
+      }
+    });
+  </script>
+
+  <!-- SCRIPT for videos and buttons -->
+
+  <script>
+    const buttons = document.querySelectorAll('.video-btn');
+    const video = document.querySelector('video');
+
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        // Reset all buttons to no border/no bg
+        buttons.forEach(b => {
+          b.classList.remove(
+            'border',
+            'border-white',
+            'bg-gradient-to-b',
+            'from-[#242634]',
+            'to-[#1e202d]'
+          );
+        });
+
+        // Apply active style to clicked one
+        btn.classList.add(
+          'border',
+          'border-white',
+          'bg-gradient-to-b',
+          'from-[#242634]',
+          'to-[#1e202d]'
+        );
+
+        // Change video if data-video exists
+        const newVideo = btn.getAttribute('data-video');
+        if (newVideo && video) {
+          video.src = newVideo;
+          video.play();
+        }
+      });
+    });
+  </script>
+
+  <script>
+    function toggleAnswer(button) {
+      const answer = button.nextElementSibling;
+      const icon = button.querySelector(".codicon");
+
+      // Collapse all other answers
+      document.querySelectorAll(".answer").forEach((ans) => {
+        if (ans !== answer) {
+          ans.style.maxHeight = null;
+          const otherIcon = ans.previousElementSibling.querySelector(".codicon");
+          otherIcon.classList.remove("codicon-remove");
+          otherIcon.classList.add("codicon-add");
+          otherIcon.style.transform = "rotate(0deg)";
+        }
+      });
+
+      // Toggle this one
+      if (answer.style.maxHeight) {
+        answer.style.maxHeight = null;
+        icon.classList.remove("codicon-remove");
+        icon.classList.add("codicon-add");
+        icon.style.transform = "rotate(0deg)";
+      } else {
+        answer.style.maxHeight = answer.scrollHeight + "px";
+        icon.classList.remove("codicon-add");
+        icon.classList.add("codicon-remove");
+        icon.style.transform = "rotate(180deg)";
+      }
+    }
+
+    // --- Open the first one automatically on load ---
+    window.addEventListener("DOMContentLoaded", () => {
+      const firstButton = document.querySelector("button");
+      if (firstButton) toggleAnswer(firstButton);
+    });
+  </script>
+
+  <script>
+    const menu = document.getElementById("mobileMenu");
+    const icon = document.getElementById("menuIcon");
+    let isOpen = false;
+
+    function toggleMenu() {
+      if (!isOpen) {
+        menu.classList.remove("hidden");
+        setTimeout(() => {
+          menu.classList.add("max-h-[600px]", "p-5");
+        }, 10);
+        icon.classList.remove("codicon-three-bars");
+        icon.classList.add("codicon-x");
+      } else {
+        menu.classList.remove("max-h-[600px]", "p-5");
+        setTimeout(() => {
+          menu.classList.add("hidden");
+        }, 500); // match transition duration
+        icon.classList.remove("codicon-x");
+        icon.classList.add("codicon-three-bars");
+      }
+      isOpen = !isOpen;
+    }
+  </script>
+
+
+
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./src/output.css">
+    <link rel="stylesheet" href="https://microsoft.github.io/vscode-codicons/dist/codicon.css">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div class="flex items-center justify-center min-h-screen bg-[#0d1017]">
+        <div class="w-[90%] text-center mt-20 sm:w-[400px]">
+
+            <!-- GitHub Icon -->
+            <i class="codicon codicon-github-inverted text-white" style="font-size: 50px;"></i>
+            <p class="text-[24px] font-semibold text-white mt-4 mb-6">Sign in to GitHub</p>
+
+            <!-- Form -->
+            <form class="flex flex-col gap-4 text-left text-white items-center">
+                <!-- Username -->
+                <div class="w-full">
+                    <label for="username" class="block mb-2 text-white">Username or email address</label>
+                    <input type="text" id="username" name="username" placeholder="Username" required
+                        class="w-full border-2 border-[#32353c] rounded-[8px] px-4 py-2 bg-[#0d1017] text-white" />
+                </div>
+
+                <!-- Password -->
+                <div class="w-full">
+                    <div class="flex justify-between items-center mb-2">
+                        <label for="password" class="text-white">Password</label>
+                        <a href="#" class="text-[#58a6ff] hover:underline text-sm">Forgot password?</a>
+                    </div>
+                    <input type="password" id="password" name="password" placeholder="Password" required
+                        class="w-full border-2 border-[#32353c] rounded-[8px] px-4 py-2 bg-[#0d1017] text-white" />
+                </div>
+
+
+            </form>
+
+            <!-- Sign In Button -->
+            <button type="submit"
+                class="w-full bg-[#238636] hover:bg-[#2ea043] text-white font-semibold py-2 rounded-[8px] mt-2">
+                Sign in
+            </button>
+
+            <!-- OR  -->
+            <div class="flex items-center justify-center w-full my-4">
+                <div class="flex-grow h-px bg-[#30363d]"></div>
+                <span class="px-3 text-[#8b949e]">or</span>
+                <div class="flex-grow h-px bg-[#30363d]"></div>
+            </div>
+
+            <!-- BUTTONS -->
+
+            <button type="submit"
+                class="w-full flex justify-center gap-5 bg-[#212830] border-1 border-gray-700 hover:bg-[#262c36] text-white font-semibold py-2 rounded-[8px] mt-2">
+                <img src="./img/download (1).svg" alt="">
+                Continue with Google
+            </button>
+
+            <button type="submit"
+                class="w-full mt-2 flex justify-center gap-5 bg-[#212830] border-1 border-gray-700 hover:bg-[#262c36] text-white font-semibold py-2 rounded-[8px]">
+                <img src="./img/download.svg" alt="download icon" class="invert text-2xl" />
+
+                Continue with Apple
+            </button>
+
+            <!-- TEXT BELOW -->
+
+            <div class="m-4 mb-2">
+                <p class="text-white"> New to Github?
+                    <a href="#" class="text-[#3f89f1] text-[16px] hover:underline">Create an account</a>
+                </p>
+
+                <a href="#" class="text-[#3f89f1] text-[16px] font-bold mt-8 mb-2 hover:underline block">Sign in with a
+                    passkey</a>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="w-full border border-transparent py-4 bg-[#151b23]">
+
+        <div class="w-[70%] mx-auto block items-center text-center gap-10 justify-center md:flex">
+
+            <p class="text-[14px] text-[#8b949e] hover:text-[#3f89f1] hover:underline">Terms</p>
+            <p class="text-[14px] text-[#8b949e] text-gray-500 hover:text-[#3f89f1] hover:underline">Privacy</p>
+            <p class="text-[14px] text-[#8b949e] hover:text-[#3f89f1] hover:underline">Docs</p>
+            <p class="text-[14px] text-[#8b949e] hover:text-[#3f89f1] hover:underline">Contact GitHub Support</p>
+            <p class="text-[14px] text-[#8b949e] ml-10 hover:text-[#3f89f1] hover:underline">Manage Cookies</p>
+            <p class="text-[14px] text-[#8b949e] ml-10 hover:text-[#3f89f1] hover:underline">Do not Share my personal information</p>
+            
+
+        </div>
+
+
+    </div>
+
+
+</body>
+
+</html>

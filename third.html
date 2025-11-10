@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./src/output.css">
+    <link rel="stylesheet" href="https://microsoft.github.io/vscode-codicons/dist/codicon.css">
+    <title>Document</title>
+</head>
+
+<body class="grid grid-cols-1 w-full md:grid-cols-2">
+
+    <!-- BLACK SIDE -->
+    <div
+        class="bg-gradient-to-b from-[black] from-[70%] via-[#13103e] via-[85%] to-[#9b79ff] to-[100%] py-10 w-full flex justify-center text-white">
+
+
+        <div class="w-full">
+            <div class="w-full flex justify-center text-white mt-10">
+                <div class="w-[65%] text-left flex flex-col gap-2">
+                    <h1 class="text-[37px] font-bold">
+                        Create your free account
+                    </h1>
+
+                    <p class="text-[16px] font-semibold">
+                        Explore GitHub's core features for individuals and organizations.
+                    </p>
+
+                    <!-- Toggle Trigger -->
+                    <p id="toggleButton" class="flex items-center gap-2 cursor-pointer select-none font-semibold">
+                        See what's included
+                        <i id="chevronIcon"
+                            class="codicon codicon-chevron-down text-[18px] transition-transform duration-300"></i>
+                    </p>
+
+                    <!-- Hidden Section -->
+                    <div id="features" class="hidden flex flex-col gap-4 mt-4">
+                        <div>
+                            <p class="font-semibold">Access to GitHub Copilot</p>
+                            <p>Increase your productivity and accelerate software development.</p>
+                        </div>
+
+                        <div>
+                            <p class="font-semibold">Unlimited repositories</p>
+                            <p>Collaborate securely on public and private projects.</p>
+                        </div>
+
+                        <div>
+                            <p class="font-semibold">Integrated code reviews</p>
+                            <p>Boost code quality with built-in review tools.</p>
+                        </div>
+
+                        <div>
+                            <p class="font-semibold">Automated workflows</p>
+                            <p>Save time with CI/CD integrations and GitHub Actions.</p>
+                        </div>
+
+                        <div>
+                            <p class="font-semibold">Community support</p>
+                            <p>Connect with developers worldwide for instant feedback and insights.</p>
+                        </div>
+                    </div>
+
+
+
+
+                </div>
+
+
+
+            </div>
+
+            <div class="w-full pt-80 bg-[url(/img/imgi_5_particles-de1dd20f3008.png)]">
+
+                <div class="mx-auto w-[80%] bg-[url(/img/imgi_5_particles-de1dd20f3008.png)]">
+                    <img src="./img/tres-amigos@2x.webp" alt="" class="w-[100%]">
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- Script -->
+        <script>
+            const toggleButton = document.getElementById('toggleButton');
+            const features = document.getElementById('features');
+            const chevronIcon = document.getElementById('chevronIcon');
+
+            toggleButton.addEventListener('click', () => {
+                features.classList.toggle('hidden');
+                chevronIcon.classList.toggle('rotate-180');
+            });
+        </script>
+    </div>
+
+    <div class="mx-auto w-full">
+
+        <div class="">
+            <p class="items-right text-right justify-right pr-8 mr-20 mt-10">Already have an account? <a href="">Sign
+                    in</a></p>
+        </div>
+
+        <div class="w-[70%] mx-auto justify-center text-black mt-10">>
+            <p class="text-2xl text-black font-semibold mb-10">Sign up for Github</p>
+
+            <button type="submit"
+                class="w-full flex justify-center gap-5 border-1 border-gray-700 hover:bg-[#262c36] text-black font-semibold py-2 rounded-[8px] mt-2">
+                <img src="./img/download (1).svg" alt="">
+                Continue with Google
+            </button>
+
+            <button type="submit"
+                class="w-full mt-2 flex justify-center gap-5 border-1 border-gray-700 hover:bg-[#262c36] text-black font-semibold py-2 rounded-[8px]">
+                <img src="./img/download.svg" alt="download icon" class="text-2xl" />
+
+                Continue with Apple
+            </button>
+
+            <div class="flex items-center justify-center w-full my-4">
+                <div class="flex-grow h-px bg-black"></div>
+                <span class="px-3 text-[#8b949e]">or</span>
+                <div class="flex-grow h-px bg-[#30363d]"></div>
+            </div>
+
+            <!-- Form -->
+            <form class="flex flex-col gap-4 text-left text-white items-center">
+                <!--Email -->
+                <div class="w-full">
+                    <label for="username" class="block mb-2 text-black text-[18px]">Email*</label>
+                    <input type="text" id="username" name="username" placeholder="Username" required
+                        class="w-full border-2 border-black rounded-[8px] px-4 py-2 bg-white text-black" />
+                </div>
+
+                <!-- Password -->
+                <div class="w-full">
+                    <div class="flex justify-between items-center mb-2">
+                        <label for="password" class="block mb-2 text-black text-[18px]">Password</label>
+                        <a href="#" class="text-[#58a6ff] hover:underline text-sm">Forgot password?</a>
+                    </div>
+                    <input type="password" id="password" name="password" placeholder="Password" required
+                        class="w-full border-2 border-black rounded-[8px] px-4 py-2 bg-white text-black" />
+                    <p class="text-gray-600 text-[15px]">Password should be at least 15 characters OR at least 8
+                        characters including a
+                        number and a lowercase letter.</p>
+                </div>
+
+                <!-- Username -->
+                <div class="w-full">
+                    <label for="username" class="block mb-2 text-black text-[18px]">Email address</label>
+                    <input type="text" id="username" name="username" placeholder="Username" required
+                        class="w-full border-2 border-black rounded-[8px] px-4 py-2 bg-white text-black" />
+                    <p class="text-gray-600 text-[15px]">Username may only contain alphanumeric characters or single
+                        hyphens, and cannot begin or end with a hyphen.</p>
+                </div>
+
+                <!-- Country -->
+                <div class="w-full">
+                    <label for="username" class="block mb-2 text-black text-[18px]">Your Country/Region*</label>
+                    <input type="text" id="username" name="username" placeholder="Username" required
+                        class="w-full border-2 border-black rounded-[8px] px-4 py-2 bg-white text-black" />
+                    <p class="text-gray-600 text-[15px]">For compliance reasons, we're required to collect country
+                        information to send you occasional updates and announcements.</p>
+                </div>
+            </form>
+
+            <div class="mt-10 mb-20">
+                <p class="text-[18px]">Email Prefrences</p>
+                <div>
+                    <p class="text-[18px]">Receive occasional product updates and announcements</p>
+                </div>
+                <button type="submit"
+                    class="w-full bg-black hover:bg-[#32383f] text-white font-semibold py-4 rounded-[8px] mt-2">
+                    Sign in
+                </button>
+
+                <p class="text-[15px]">By creating an account, you agree to the Terms of Service. For more information about GitHub's privacy practices, see the GitHub Privacy Statement. We'll occasionally send you account-related emails.</p>
+
+
+            </div>
+        </div>
+
+    </div>
+
+
+</body>
+
+
+</html>

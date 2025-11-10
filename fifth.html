@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./src/output.css">
+    <link rel="stylesheet" href="https://microsoft.github.io/vscode-codicons/dist/codicon.css">
+    <title>Document</title>
+</head>
+
+<body class="w-full bg-[#010409]">
+
+    <div
+        class="bg-[#010409] border-1 border-transparent py-3 flex justify-between items-center text-center w-[98%] mx-auto">
+
+        <div class="gap-4 flex">
+
+            <!-- HAMBURGER (with border) -->
+            <button id="menu-btn" class="flex flex-col justify-center items-center w-7 h-7 gap-[5px] group 
+         border border-gray-500 rounded-md hover:border-white transition">
+                <span
+                    class="block w-3 h-[1px] bg-white transition-all duration-300 group-[.open]:rotate-45 group-[.open]:translate-y-[7px]"></span>
+                <span class="block w-3 h-[1px] bg-white transition-all duration-300 group-[.open]:opacity-0"></span>
+                <span
+                    class="block w-3 h-[1px] bg-white transition-all duration-300 group-[.open]:-rotate-45 group-[.open]:-translate-y-[7px]"></span>
+            </button>
+
+            <div class="items-center flex gap-2">
+                <i class="codicon codicon-github-inverted text-white" style="font-size: 25px;"></i>
+                <p class="text-white text-[15px] hidden md:flex">S23rez/ </p>
+                <div class="flex sm:hidden"><i class="codicon codicon-ellipsis text-white" style="font-size: 20px;">/</i></div>
+                <span class="font-semibold text-white text-[15px] hidden sm:flex">CJDE-Workflow</span>
+                <i class="codicon codicon-lock text-gray-400" style="font-size: 15px;"></i>
+            </div>
+
+
+
+
+            <!-- ====== SIDEBAR ====== -->
+            <div id="sidebar"
+                class="fixed top-0 left-0 h-full w-[360px] bg-[#010409] text-white transform -translate-x-full transition-transform duration-300 z-50">
+                <div class="flex justify-between items-center p-4 border-r rounded-tr-[15px] border-r-gray-700">
+                    <i class="codicon codicon-github-inverted text-white" style="font-size: 30px;"></i>
+                    <button id="close-btn" class="text-white text-2xl">&times;</button>
+                </div>
+
+                <ul class="mt-4 space-y-4 px-6">
+                    <li class="flex items-center gap-2 cursor-pointer hover:text-[#1f6feb]"><i
+                            class="codicon codicon-home"></i> Home</li>
+                    <li class="flex items-center gap-2 cursor-pointer hover:text-[#1f6feb]"><i
+                            class="codicon codicon-issues"></i> Issues</li>
+                    <li class="flex items-center gap-2 cursor-pointer hover:text-[#1f6feb]"><i
+                            class="codicon codicon-git-pull-request"></i> Pull requests</li>
+                    <li class="flex items-center gap-2 cursor-pointer hover:text-[#1f6feb]"><i
+                            class="codicon codicon-project"></i> Projects</li>
+                    <li class="flex items-center gap-2 cursor-pointer hover:text-[#1f6feb]"><i
+                            class="codicon codicon-comment-discussion"></i> Discussions</li>
+                    <li class="flex items-center gap-2 cursor-pointer hover:text-[#1f6feb]"><i
+                            class="codicon codicon-codespaces"></i> Codespaces</li>
+                    <li class="flex items-center gap-2 cursor-pointer hover:text-[#1f6feb]"><i
+                            class="codicon codicon-copilot"></i> Copilot</li>
+                    <hr class="border-gray-700" />
+                    <li class="flex items-center gap-2 cursor-pointer hover:text-[#1f6feb]"><i
+                            class="codicon codicon-search"></i> Explore</li>
+                    <li class="flex items-center gap-2 cursor-pointer hover:text-[#1f6feb]"><i
+                            class="codicon codicon-package"></i> Marketplace</li>
+                    <li class="flex items-center gap-2 cursor-pointer hover:text-[#1f6feb]"><i
+                            class="codicon codicon-extensions"></i> MCP registry</li>
+                </ul>
+            </div>
+        </div>
+
+
+        <div class="flex gap-2 items-center">
+            <!-- first -->
+
+            <div class="relative w-[250px] hidden md:flex">
+                <!-- 👇 the Codicon -->
+                <i
+                    class="codicon codicon-search absolute left-3 top-1/2 -translate-y-1/2 text-[#8b949e] text-[18px]"></i>
+
+                <!-- 👇 the Input -->
+                <input type="text" placeholder="Type to Search"
+                    class="w-full bg-[#0d1117] border border-[#30363d] rounded-md text-[#c9d1d9] pl-10 pr-3 py-1 text-sm focus:outline-none focus:ring-1 focus:ring-[#238636]" />
+            </div>
+
+            <!-- search -->
+            <button class="border-1 border-[#818891] rounded-lg p-1 md:hidden items-center text-white gap-2">
+                <i class="codicon codicon-search text-[#818891]" style="font-size: 20px;"></i>
+            </button>
+
+
+            <!-- second -->
+            <button class="border-1 border-[#818891] rounded-lg p-1 hidden md:flex items-center text-white gap-2">
+                <i class="codicon codicon-copilot text-[#818891]" style="font-size: 20px;"></i>
+                <i class="codicon codicon-triangle-down text-[#818891]" style="font-size:10px;"></i>
+            </button>
+
+            <!-- line -->
+            <p class="text-[#818891] text-[14px] hidden md:flex">|</p>
+
+            <!-- third  -->
+
+            <button class="border-1 border-[#818891] rounded-lg p-1 hidden md:flex items-center text-white gap-2">
+                <i class="codicon codicon-add  text-[#818891]" style="font-size: 18px;"></i>
+                <i class="codicon codicon-triangle-down text-[#818891]" style="font-size: 10px;"></i>
+            </button>
+
+            <!-- fourth -->
+            <button class="border-1 border-[#818891] rounded-lg p-1 hidden md:flex items-center text-white gap-2">
+                <i class="codicon codicon-issues text-[#818891]" style="font-size: 20px;"></i>
+            </button>
+
+            <!-- fifth -->
+            <button class="border-1 border-[#818891] rounded-lg p-1 hidden md:flex items-center text-white gap-2">
+                <i class="codicon codicon-git-pull-request text-[#818891]" style="font-size: 20px;"></i>
+            </button>
+
+            <!-- sixth -->
+            <button class="border-1 border-[#818891] rounded-lg p-1 flex items-center text-white gap-2">
+                <i class="codicon codicon-inbox text-[#818891]" style="font-size: 20px;"></i>
+            </button>
+
+            <!-- seventh -->
+            <img src="./img/172189416.png" alt="" class="w-[35px] rounded-[90%]">
+        </div>
+
+
+
+    </div>
+
+    <!-- SUB-HEADER BAR -->
+    <div class="bg-[#010409] py-1 px-6 flex items-left gap-5 text-center">
+
+        <div class="flex gap-2 items-center">
+            <i class="codicon codicon-code text-[#818891]" style="font-size: 18px;"></i>
+            <a href="#"
+                class="text-white text-[16px] border-b-2 border-transparent hover:border-[#f78166] pb-1">Code</a>
+        </div>
+
+        <div class="flex gap-2 items-center">
+            <i class="codicon codicon-issues text-[#818891]" style="font-size: 18px;"></i>
+            <a href="#"
+                class="text-white text-[14px] border-b-2 border-transparent hover:border-[#f78166] pb-1">Issues</a>
+        </div>
+
+        <div class="flex gap-2 items-center hidden sm:flex">
+            <i class="codicon codicon-git-pull-request text-[#818891]" style="font-size: 15px;"></i>
+            <a href="#" class="text-white text-[14px] border-b-2 border-transparent hover:border-[#f78166] pb-1">Pull
+                requests</a>
+        </div>
+
+        <div class="gap-2 items-center hidden sm:flex">
+            <i class="codicon codicon-play-circle text-[#818891]" style="font-size: 18px;"></i>
+            <a href="#"
+                class="text-white text-[14px] border-b-2 border-transparent hover:border-[#f78166] pb-1">Actions</a>
+        </div>
+
+        <div class="gap-2 items-center hidden sm:flex">
+            <i class="codicon codicon-github-project text-[#818891]" style="font-size: 18px;"></i>
+            <a href="#"
+                class="text-white text-[14px] border-b-2 border-transparent hover:border-[#f78166] pb-1">Projects</a>
+        </div>
+
+        <div class="gap-2 items-center hidden md:flex">
+            <i class="codicon codicon-shield text-[#818891]" style="font-size: 18px;"></i>
+            <a href="#"
+                class="text-white text-[14px] border-b-2 border-transparent hover:border-[#f78166] pb-1">Security</a>
+        </div>
+
+        <div class="md:flex gap-2 items-center hidden">
+            <i class="codicon codicon-graph-line text-[#818891]" style="font-size: 18px;"></i>
+            <a href="#"
+                class="text-white text-[14px] border-b-2 border-transparent hover:border-[#f78166] pb-1">Insights</a>
+        </div>
+
+        <div class="gap-2 items-center hidden md:flex">
+            <i class="codicon codicon-settings-gear text-[#818891]" style="font-size: 18px;"></i>
+            <a href="#"
+                class="text-white text-[14px] border-b-2 border-transparent hover:border-[#f78166] pb-1">Settings</a>
+        </div>
+
+
+        <div class="gap-2 border-1 border-gray-500 bg-[#212830] rounded-md justify-center px-1 py-0 ml-10 md:hidden">
+            <i class="codicon codicon-ellipsis text-[#818891]" style="font-size: 22px;"></i>
+        </div>
+
+    </div>
+
+
+    <div class="w-full bg-[#0d1117]">
+        <hr class="text-gray-400 text-2xl">
+
+        <div class="w-[85%] mx-auto flex justify-between my-3 lg:w-[95%] hidden md:flex">
+
+            <div>
+
+                <div class="flex gap-2 text-white">
+                    <img src="./img/172189416.png" alt="" class="w-[30px] rounded-[100%]">
+
+                    <div class="flex gap-2 items-center">
+
+                        <a href="" class="text-[20px] font-semibold">CJDE-Workflow</a>
+
+                        <p
+                            class="border-1 bg-[#0d1117] border-gray-500 text-[#8d96a1] rounded-[15px] px-2 py-1 text-[10px] font-semibold">
+                            Private</p>
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+            <div class="flex items-center gap-2">
+
+                <button
+                    class="flex items-center gap-2 px-3 py-1 border border-[#30363d] bg-[#21262d] hover:bg-[#292e35] text-[#c9d1d9] text-[13px] rounded-md">
+                    <i class="codicon codicon-eye"></i>
+                    Watch
+                    <span
+                        class="bg-[#0d1117] border border-[#30363d] text-[#c9d1d9] text-[12px] px-1.5 rounded-md">0</span>
+                    <i class="codicon codicon-triangle-down text-[10px]"></i>
+                </button>
+
+                <button
+                    class="flex items-center gap-2 px-3 py-1 border border-[#30363d] bg-[#21262d] hover:bg-[#292e35] text-[#8b949e] text-[13px] rounded-md">
+                    <i class="codicon codicon-git-branch"></i>
+                    Fork
+                    <span
+                        class="bg-[#0d1117] border border-[#30363d] text-[#8b949e] text-[12px] px-1.5 rounded-md">0</span>
+                    <i class="codicon codicon-triangle-down text-[10px]"></i>
+                </button>
+
+                <button
+                    class="flex items-center gap-2 px-3 py-1 border border-[#30363d] bg-[#21262d] hover:bg-[#292e35] text-[#c9d1d9] text-[13px] rounded-md">
+                    <i class="codicon codicon-star"></i>
+                    Star
+                    <span
+                        class="bg-[#0d1117] border border-[#30363d] text-[#c9d1d9] text-[12px] px-1.5 rounded-md">0</span>
+                    <i class="codicon codicon-triangle-down text-[10px]"></i>
+                </button>
+
+            </div>
+        </div>
+
+        <hr class="text-gray-400 text-2xl w-[85%] mx-auto lg:w-full">
+
+        <div class="grid md:grid-cols-[70%_30%] w-[85%] mx-auto mt-5 gap-6 lg:w-[95%] grid-cols-1">
+
+            <div class="w-full">
+
+                <div class="flex justify-between items-center text-center mb-8">
+
+                    <div class="flex gap-2 items-center lg:gap-4">
+
+                        <div class="">
+                            <button
+                                class="flex items-center gap-2 px-4 py-1 border border-[#30363d] bg-[#21262d] hover:bg-[#292e35] text-[#c9d1d9] font-bold text-[15px] rounded-md">
+                                <i class="codicon codicon-git-branch"></i>
+                                main
+                                <i class="codicon codicon-triangle-down" style="font-size: 10px;"></i>
+                            </button>
+                        </div>
+
+                        <div class="flex gap-2 hidden sm:flex">
+                            <i class="codicon codicon-git-branch text-[#9198a1] max-lg:visible"
+                                style="font-size: 20px;"></i>
+                            <button class="flex items-center gap-1 text-[14px] text-[#9198a1] max-lg:hidden">
+
+
+                                <span class="text-white text-[12px]">1</span>
+                                Branch
+                            </button>
+                        </div>
+
+                        <div class="flex gap-2 hidden sm:flex">
+                            <i class="codicon codicon-tag text-[#9198a1] max-lg:visibe " style="font-size: 20px;"></i>
+                            <button class="flex items-center gap-1 text-[14px] text-[#9198a1] max-lg:hidden">
+                                <span class="text-white text-[12px]">0</span>
+                                Tags
+                            </button>
+                        </div>
+
+                    </div>
+
+                    <div class="flex gap-2 items-center">
+                        <div class="flex hidden sm:flex ">
+                            <div class="flex items-center gap-2">
+                                <!-- Search Bar -->
+                                <div class="relative w-[200px] hidden lg:flex">
+                                    <!--Codicon -->
+                                    <i
+                                        class="codicon codicon-search absolute left-1 top-1/2 -translate-y-1/2 text-[#8b949e] text-[18px]"></i>
+
+                                    <!--Input -->
+                                    <input type="text" placeholder="Search"
+                                        class="w-full bg-[#0d1117] border border-[#30363d] rounded-md text-[#c9d1d9] pl-6 pr-2 py-1 text-[0.9vw] focus:outline-none focus:ring-1 focus:ring-[#238636]" />
+                                </div>
+
+                                <!-- Button -->
+                                <button class="flex items-center gap-2 px-2 py-1 border border-[#30363d] 
+                                bg-[#21262d] hover:bg-[#292e35] text-[#c9d1d9] text-[15px] rounded-md lg:hidden">
+                                    Go to file
+                                    <i class="codicon codicon-triangle-down" style="font-size: 10px;"></i>
+                                </button>
+                            </div>
+
+
+
+
+                        </div>
+
+                        <div class="flex hidden sm:flex ">
+                            <!-- TOP BUTTON: visible on xl & 2xl, hidden on lg -->
+                            <button
+                                class="items-center gap-2 px-2 py-1 border border-[#30363d] 
+                            bg-[#21262d] hover:bg-[#292e35] text-[#c9d1d9] text-[15px] rounded-md hidden sm:hidden md:flex">
+                                Add file
+                                <i class="codicon codicon-triangle-down" style="font-size: 10px;"></i>
+                            </button>
+
+                            <!-- LOWER BUTTON: visible on lg only -->
+                            <button class="items-center gap-2 px-2 py-1 border border-[#30363d] 
+                            bg-[#21262d] hover:bg-[#292e35] text-[#c9d1d9] text-[15px] rounded-md flex md:hidden">
+                                <i class="codicon codicon-add" style="font-size: 20px;"></i>
+                            </button>
+
+                        </div>
+
+                        <div class="flex">
+                            <button
+                                class="flex items-center gap-2 px-2 py-1 border border-[#30363d] bg-[#33b64a] hover:bg-[#29903b] text-[#c9d1d9] font-bold text-[15px] rounded-md">
+                                <i class="codicon codicon-code"></i>
+                                Code
+                                <i class="codicon codicon-triangle-down" style="font-size: 10px;"></i>
+                            </button>
+                        </div>
+
+                        <div
+                            class="gap-2 border-1 border-gray-500 bg-[#212830] rounded-md justify-center px-1 py-0 sm:hidden">
+                            <i class="codicon codicon-ellipsis text-[#818891]" style="font-size: 22px;"></i>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="w-full border-1 border-gray-500 rounded-md">
+
+                    <div class="flex justify-between items-center p-4 text-center rounded-lg bg-[#151b23] border-0">
+
+                        <div class="flex gap-2 items-center">
+
+                            <div class="flex gap-2 items-center">
+                                <img src="./img/172189416.png" alt="" class="w-[20px] rounded-[100%]">
+                                <p class="text-white font-semibold text-[14px]">S23rez</p>
+                            </div>
+
+                            <div class="flex [@media(max-width:496px)]:hidden">
+                                <p class="text-[#9198a1] text-[13px]">Create</p>
+                            </div>
+
+                            <div class="flex [@media(max-width:496px)]:hidden">
+                                <p class="text-[#9198a1] text-[13px]">validateDeploy.yml</p>
+                            </div>
+
+                        </div>
+
+                        <div class="flex gap-2 items-center">
+                            <div class="flex [@media(max-width:496px)]:hidden">
+                                <p class="text-[#9198a1] text-[10px]">9ddc3cb</p>
+                            </div>
+
+                            <div>
+                                <p class="text-[#9198a1] text-[10px]">. 3 weeks ago</p>
+                            </div>
+
+                            <div class="flex">
+                                <button class="flex items-center gap-1 text-white text-[13px] font-semibold">
+                                    <i class="codicon codicon-history text-[#9198a1] text-sm"
+                                        style="font-size: 14px;"></i>
+                                    2 Commits
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <hr class="text-gray-400">
+
+                    <div class="flex justify-between items-center p-4 text-center">
+
+                        <div class="flex gap-2 items-center">
+
+                            <div class="flex gap-2 items-center">
+                                <i class="codicon codicon-folder text-[#9198a1]" style="font-size: 15px;"></i>
+                            </div>
+
+                            <div>
+                                <a href=""
+                                    class="text-white text-[14px] text-smhover:underline hover:text-blue-500">.github/workflows</a>
+                            </div>
+
+                        </div>
+
+                        <div class="flex gap-2 items-center">
+                            <div class="flex [@media(max-width:496px)]:hidden">
+                                <a href="" class="text-[#9198a1]  text-smhover:underline hover:text-blue-500">Create
+                                    validateDeploy.yml</a>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-2 items-center">
+                            <div>
+                                <p class="text-[#9198a1] text-sm">3 weeks ago</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr class="text-gray-400">
+
+                    <div class="flex justify-between items-center p-4 text-center">
+
+                        <div class="flex gap-2 items-center">
+
+                            <div class="flex gap-2 items-center">
+                                <i class="codicon codicon-folder text-[#9198a1]" style="font-size: 15px;"></i>
+                            </div>
+
+                            <div>
+                                <a href="" class="text-white text-[14px] hover:underline hover:text-blue-500">rules</a>
+                            </div>
+
+                        </div>
+
+                        <div class="flex gap-2 items-center text-center">
+                            <div class="flex [@media(max-width:496px)]:hidden">
+                                <a href=""
+                                    class="text-[#9198a1] text-sm hover:underline hover:text-blue-500">Combination of
+                                    Upload SPlunk Dep...</a>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-2 items-center">
+                            <div>
+                                <p class="text-[#9198a1] text-sm">3 weeks ago</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr class="text-gray-400">
+
+                    <div class="flex justify-between items-center p-4 text-center">
+
+                        <div class="flex gap-2 items-center">
+
+                            <div class="flex gap-2 items-center">
+                                <i class="codicon codicon-folder text-[#9198a1]" style="font-size: 15px;"></i>
+                            </div>
+
+                            <div>
+                                <a href="" class="text-white text-[14px] hover:underline hover:text-blue-500">scripts</a>
+                            </div>
+
+                        </div>
+
+                        <div class="flex gap-2 items-center">
+                            <div class="flex [@media(max-width:496px)]:hidden">
+                                <a href=""
+                                    class="text-[#9198a1] text-sm hover:underline hover:text-blue-500">Combination of
+                                    Upload SPlunk Dep...</a>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-2 items-center">
+                            <div>
+                                <p class="text-[#9198a1] text-sm">3 weeks ago</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr class="text-gray-400">
+
+                    <div class="flex justify-between items-center p-4 text-center">
+
+                        <div class="flex gap-2 items-center">
+
+                            <div class="flex gap-2 items-center">
+                                <i class="codicon codicon-file text-[#9198a1]" style="font-size: 15px;"></i>
+                            </div>
+
+                            <div>
+                                <a href=""
+                                    class="text-white text-[14px] hover:underline hover:text-blue-500">sigma-schema.json</a>
+                            </div>
+
+                        </div>
+
+                        <div class="flex gap-2 items-center">
+                            <div class="flex [@media(max-width:496px)]:hidden">
+                                <a href=""
+                                    class="text-[#9198a1] text-sm hover:underline hover:text-blue-500">Combination of
+                                    Upload SPlunk Dep...</a>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-2 items-center">
+                            <div>
+                                <p class="text-[#9198a1] text-sm">3 weeks ago</p>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+                </div>
+
+                <div class="w-full border-1 border-gray-500 rounded-md my-10">
+
+                    <div class="flex items-left p-2 gap-2">
+
+                        <div class="flex items-center gap-2">
+
+                            <i class="codicon codicon-book text-[#9198a1]" style="font-size: 30px;"></i>
+
+                            <p class="text-white text-[16px] font-semibold">README</p>
+
+                        </div>
+
+
+                    </div>
+
+                    <hr class="text-gray-400">
+
+                    <div class="justify-center items-center text-center">
+                        <i class="codicon codicon-book text-[#9198a1] pt-5" style="font-size: 40px;"></i>
+                        <p class="text-3xl text-white font-semibold py-1">Add a README</p>
+                        <p class="text-[#9198a1] text-sm py-2">Add a README with an overview of your project.</p>
+
+                        <div class=" flex justify-center py-8">
+                            <button
+                                class="flex items-center gap-2 px-2 py-1 border border-[#30363d] bg-[#33b64a] hover:bg-[#29903b] text-[#c9d1d9] font-semibold text-[15px] rounded-md">
+                                Add a README
+                            </button>
+                        </div>
+
+
+                    </div>
+
+
+
+
+                </div>
+
+            </div>
+
+
+            <div class="w-full">
+
+                <div class="w-[90%] ">
+
+                    <div class="flex justify-between">
+                        <p class="text-white text-[18px] font-semibold">About</p>
+
+                        <i class="codicon codicon-settings-gear text-[#9198a1]" style="font-size: 20px;"></i>
+
+                    </div>
+
+                    <p class="text-white text-[16px]  my-4">Git Workflow for Detection Engineering</p>
+
+                    <div class="items-center flex gap-2 py-1">
+                        <a href="" class="codicon codicon-pulse text-[#9198a1] hover:text-blue-500"
+                            style="font-size: 18px;"></a>
+                        <a href="" class="text-[#9198a1] text-sm hover:text-blue-500">Activity</a>
+                    </div>
+
+                    <div class="items-center flex gap-2 py-1">
+                        <a href="" class="codicon codicon-star text-[#9198a1] hover:text-blue-500"
+                            style="font-size: 18px;"></a>
+                        <a href="" class="text-[#9198a1] text-sm hover:text-blue-500">0 stars</a>
+                    </div>
+
+                    <div class="items-center flex gap-2 py-1">
+                        <a href="" class="codicon codicon-eye text-[#9198a1] hover:text-blue-500"
+                            style="font-size: 18px;"></a>
+                        <a href="" class="text-[#9198a1] text-sm hover:text-blue-500">0 watching</a>
+                    </div>
+
+                    <div class="items-center flex gap-2 py-1">
+                        <a href="" class="codicon codicon-git-branch text-[#9198a1] hover:text-blue-500"
+                            style="font-size: 18px;"></a>
+                        <a href="" class="text-[#9198a1] text-sm hover:text-blue-500">fork</a>
+                    </div>
+
+                    <hr class="text-gray-400 my-6">
+
+                </div>
+
+
+                <div class="w-full">
+
+                    <a href="" class="text-white text-[18px] hover:underline hover:text-blue-500">Releases</a>
+
+                    <div class="pt-5">
+                        <p class="text-sm text-gray-400">No releases published</p>
+                        <a href="" class="text-sm underline text-blue-500">Create a new release</a>
+
+                    </div>
+
+                </div>
+
+                <hr class="text-gray-400 my-6 w-[90%]">
+
+                <div class="w-full">
+
+                    <a href="" class="text-white text-[16px] hover:underline hover:text-blue-500">Releases</a>
+
+                    <div class="pt-5">
+                        <p class="text-sm text-gray-400">No releases published</p>
+                        <a href="" class="text-sm underline text-blue-500">Create a new release</a>
+
+                    </div>
+
+                </div>
+
+                <hr class="text-gray-400 my-6 w-[90%]">
+
+                <div class="w-full">
+
+                    <p class="text-[20px] text-white font-semibold">Languages</p>
+
+                    <div class="border-[#3572a5] rounded-lg text-3xl border-5 w-[90%] mt-5">
+
+                    </div>
+
+
+
+
+                    <div class="flex gap-3 items-center mt-4">
+                        <i class="codicon codicon-circle-large-filled text-[#3572a5] font-bold"
+                            style="font-size: 14px;"></i>
+                        <p class="text-[#818891] text-[14px]">Python 100%</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+    </div>
+
+    <footer
+        class="w-[80%] mx-auto flex flex-col items-center justify-center gap-4 text-center py-6 md:flex-row md:justify-between md:text-left md:gap-6">
+        <!-- Top Links -->
+        <div class="flex flex-wrap justify-center gap-4 text-[#8b949e] text-[13px]">
+            <p class="hover:text-[#3f89f1] hover:underline cursor-pointer">Terms</p>
+            <p class="hover:text-[#3f89f1] hover:underline cursor-pointer">Privacy</p>
+            <p class="hover:text-[#3f89f1] hover:underline cursor-pointer">Security</p>
+            <p class="hover:text-[#3f89f1] hover:underline cursor-pointer">Status</p>
+            <p class="hover:text-[#3f89f1] hover:underline cursor-pointer">Community</p>
+            <p class="hover:text-[#3f89f1] hover:underline cursor-pointer">Docs</p>
+            <p class="hover:text-[#3f89f1] hover:underline cursor-pointer">Contact</p>
+            <p class="hover:text-[#3f89f1] hover:underline cursor-pointer">Manage cookies</p>
+            <p class="hover:text-[#3f89f1] hover:underline cursor-pointer">Do not share my personal information</p>
+        </div>
+
+        <!-- Bottom Icon + Text -->
+        <div class="flex items-center gap-2 text-[#818891] text-[14px] justify-center">
+            <i class="codicon codicon-github-inverted text-[16px]"></i>
+            <p>© 2025 GitHub, Inc.</p>
+        </div>
+    </footer>
+
+
+
+
+    <script>
+        const menuBtn = document.getElementById("menu-btn");
+        const sidebar = document.getElementById("sidebar");
+        const closeBtn = document.getElementById("close-btn");
+
+        menuBtn.addEventListener("click", () => {
+            sidebar.classList.toggle("-translate-x-full");
+            menuBtn.classList.toggle("open");
+        });
+
+        closeBtn.addEventListener("click", () => {
+            sidebar.classList.add("-translate-x-full");
+            menuBtn.classList.remove("open");
+        });
+    </script>
+
+</body>
+
+</html>

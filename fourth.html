@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=exxedxwdwsws2wst6r45po0p, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./src/output.css">
+    <link rel="stylesheet" href="https://microsoft.github.io/vscode-codicons/dist/codicon.css">
+</head>
+
+<body class="bg-[#010409]">
+
+    <div
+        class="bg-[#010409] border-1 border-transparent border-b border-b-gray-400 py-2 flex justify-between items-center text-center px-3 w-[100%] mx-auto">
+
+        <div class="gap-4 flex">
+
+            <!-- HAMBURGER (with border) -->
+            <button id="menu-btn" class="flex flex-col justify-center items-center w-7 h-7 gap-[5px] group 
+         border border-gray-500 rounded-md hover:border-white transition">
+                <span
+                    class="block w-3 h-[1px] bg-white transition-all duration-300 group-[.open]:rotate-45 group-[.open]:translate-y-[7px]"></span>
+                <span class="block w-3 h-[1px] bg-white transition-all duration-300 group-[.open]:opacity-0"></span>
+                <span
+                    class="block w-3 h-[1px] bg-white transition-all duration-300 group-[.open]:-rotate-45 group-[.open]:-translate-y-[7px]"></span>
+            </button>
+
+
+            <i class="codicon codicon-github-inverted text-white" style="font-size: 35px;"></i>
+            <p class="text-[16px] text-white font-semibold hidden [@media(max-width:356px)]:flex">Dashb...</p>
+            <p class="text-[16px] text-white font-semibold flex [@media(max-width:356px)]:hidden">Dashboard</p>
+
+            <!-- ====== SIDEBAR ====== -->
+            <div id="sidebar"
+                class="fixed top-0 left-0 h-full w-[360px] bg-[#010409] text-white transform -translate-x-full transition-transform duration-300 z-50">
+                <div class="flex justify-between items-center p-4 border-r rounded-tr-[15px] border-r-gray-700">
+                    <i class="codicon codicon-github-inverted text-white" style="font-size: 30px;"></i>
+                    <button id="close-btn" class="text-white text-2xl">&times;</button>
+                </div>
+
+                <ul class="mt-4 space-y-4 px-6">
+                    <li class="flex items-center gap-2 cursor-pointer hover:text-[#1f6feb]"><i
+                            class="codicon codicon-home"></i> Home</li>
+                    <li class="flex items-center gap-2 cursor-pointer hover:text-[#1f6feb]"><i
+                            class="codicon codicon-issues"></i> Issues</li>
+                    <li class="flex items-center gap-2 cursor-pointer hover:text-[#1f6feb]"><i
+                            class="codicon codicon-git-pull-request"></i> Pull requests</li>
+                    <li class="flex items-center gap-2 cursor-pointer hover:text-[#1f6feb]"><i
+                            class="codicon codicon-project"></i> Projects</li>
+                    <li class="flex items-center gap-2 cursor-pointer hover:text-[#1f6feb]"><i
+                            class="codicon codicon-comment-discussion"></i> Discussions</li>
+                    <li class="flex items-center gap-2 cursor-pointer hover:text-[#1f6feb]"><i
+                            class="codicon codicon-codespaces"></i> Codespaces</li>
+                    <li class="flex items-center gap-2 cursor-pointer hover:text-[#1f6feb]"><i
+                            class="codicon codicon-copilot"></i> Copilot</li>
+                    <hr class="border-gray-700" />
+                    <li class="flex items-center gap-2 cursor-pointer hover:text-[#1f6feb]"><i
+                            class="codicon codicon-search"></i> Explore</li>
+                    <li class="flex items-center gap-2 cursor-pointer hover:text-[#1f6feb]"><i
+                            class="codicon codicon-package"></i> Marketplace</li>
+                    <li class="flex items-center gap-2 cursor-pointer hover:text-[#1f6feb]"><i
+                            class="codicon codicon-extensions"></i> MCP registry</li>
+                </ul>
+            </div>
+        </div>
+
+
+        <div class="flex gap-2 items-center">
+            <!-- first -->
+
+            <div class="relative w-[250px] hidden md:flex">
+                <!-- 👇 the Codicon -->
+                <i
+                    class="codicon codicon-search absolute left-3 top-1/2 -translate-y-1/2 text-[#8b949e] text-[18px]"></i>
+
+                <!-- 👇 the Input -->
+                <input type="text" placeholder="Type to Search"
+                    class="w-full bg-[#0d1117] border border-[#30363d] rounded-md text-[#c9d1d9] pl-10 pr-3 py-1 text-sm focus:outline-none focus:ring-1 focus:ring-[#238636]" />
+            </div>
+
+            <!-- search -->
+            <button class="border-1 border-[#818891] rounded-lg p-1 md:hidden items-center text-white gap-2">
+                <i class="codicon codicon-search text-[#818891]" style="font-size: 20px;"></i>
+            </button>
+
+
+            <!-- second -->
+            <button class="border-1 border-[#818891] rounded-lg p-1 hidden md:flex items-center text-white gap-2">
+                <i class="codicon codicon-copilot text-[#818891]" style="font-size: 20px;"></i>
+                <i class="codicon codicon-triangle-down text-[#818891]" style="font-size:10px;"></i>
+            </button>
+
+            <!-- line -->
+            <p class="text-[#818891] text-[14px] hidden md:flex">|</p>
+
+            <!-- third  -->
+
+            <button class="border-1 border-[#818891] rounded-lg p-1 hidden md:flex items-center text-white gap-2">
+                <i class="codicon codicon-add  text-[#818891]" style="font-size: 18px;"></i>
+                <i class="codicon codicon-triangle-down text-[#818891]" style="font-size: 10px;"></i>
+            </button>
+
+            <!-- fourth -->
+            <button class="border-1 border-[#818891] rounded-lg p-1 hidden md:flex items-center text-white gap-2">
+                <i class="codicon codicon-issues text-[#818891]" style="font-size: 20px;"></i>
+            </button>
+
+            <!-- fifth -->
+            <button class="border-1 border-[#818891] rounded-lg p-1 hidden md:flex items-center text-white gap-2">
+                <i class="codicon codicon-git-pull-request text-[#818891]" style="font-size: 20px;"></i>
+            </button>
+
+            <!-- sixth -->
+            <button class="border-1 border-[#818891] rounded-lg p-1 flex items-center text-white gap-2">
+                <i class="codicon codicon-inbox text-[#818891]" style="font-size: 20px;"></i>
+            </button>
+
+            <!-- seventh -->
+            <img src="./img/172189416.png" alt="" class="w-[35px] rounded-[90%]">
+        </div>
+
+
+
+    </div>
+
+
+    </div>
+
+    <div class="w-full grid md:grid-cols-[30%_70%] bg-[#010409] lg:grid-cols-[25%_55%_20%]">
+
+        <div class="w-full border-r-1 border-[#818891] bg-[#0d1117] mx-auto gap-4 max-md:hidden">
+
+            <div class="w-[90%] mx-auto mt-10">
+
+                <div class="flex mb-4 justify-between">
+                    <p class="text-white text-[15px] font-bold">Top repositories</p>
+
+                    <div
+                        class="border-2 bg-[#258235] border-transparent hover:bg-[#29903b] flex py-0 px-1 rounded-[5px] gap-1    items-center">
+                        <i class="codicon codicon-repo text-white font-bold" style="font-size: 20px;"></i>
+                        <p class="text-white">New</p>
+                    </div>
+
+                </div>
+
+                <button
+                    class="text-[#818891] border-1 border-[#818891] bg-[#151b23] mb-4 rounded-lg py-1 pl-2 px-30 text-left flex items-center">Find
+                    a repository...</button>
+
+                <div class="flex gap-4 text-white mb-4">
+                    <img src="./img/172189416.png" alt="" class="w-[30px] rounded-[100%]">
+                    <p>S23rez/CJDE-Workflow</p>
+                </div>
+
+                <div class="flex gap-4 text-white mb-4">
+                    <img src="./img/172189416.png" alt="" class="w-[30px] rounded-[100%]">
+                    <p>S23rez/CJDE-Workflow</p>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="bg-[#010409] md:w-full">
+
+            <div class="w-[90%] mx-auto mt-10">
+
+                <div class="flex justify-between items-center w-full">
+                    <p class="text-white text-3xl font-semibold">Home</p>
+                    <a href="" class="text-[#3193f8] hover:underline">Try the new experience</a>
+                </div>
+
+                <div class="border-1 bg-[#0d1117] border-[#818891] rounded-lg w-full p-5 my-10">
+
+                    <div>
+                        <p class="text-[17px] font-semibold text-[#575c64]">Ask anything</p>
+                    </div>
+
+                    <div class="mt-14 flex justify-between items-center ">
+                        <div class="flex items-center gap-2">
+                            <i class="codicon codicon-add text-[#818891] font-bold" style="font-size: 20px;"></i>
+                            <p class="text-[#8298a1]">Add repositories, files, and spaces</p>
+
+                        </div>
+
+                        <div class="flex items-center gap-5">
+                            <p class="text-[#818891] text-2xl">|</p>
+                            <i class="codicon codicon-send text-[#818891]" style="font-size: 20px;"></i>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="border-1 bg-[#0d1117] border-[#818891] rounded-lg w-full p-5 my-10 md:hidden">
+
+                    <div class="flex mb-4 justify-between">
+                        <p class="text-white text-[15px] font-bold">Top repositories</p>
+
+                        <div
+                            class="border-2 bg-[#258235] border-transparent hover:bg-[#29903b] flex py-0 px-1 rounded-[5px] gap-1    items-center">
+                            <i class="codicon codicon-repo text-white font-bold" style="font-size: 20px;"></i>
+                            <p class="text-white">New</p>
+                        </div>
+
+                    </div>
+
+                    <button
+                        class="text-[#818891] border-1 border-[#818891] bg-[#151b23] mb-4 rounded-lg w-full py-1 pl-2 px-30 text-left flex items-center">Find
+                        a repository...</button>
+
+                    <div class="flex gap-4 text-white mb-4">
+                        <img src="./img/172189416.png" alt="" class="w-[30px] rounded-[100%]">
+                        <p>S23rez/CJDE-Workflow</p>
+                    </div>
+
+                    <div class="flex gap-4 text-white mb-4">
+                        <img src="./img/172189416.png" alt="" class="w-[30px] rounded-[100%]">
+                        <p>S23rez/CJDE-Workflow</p>
+                    </div>
+
+                </div>
+
+                <div class="w-[90%] sm:flex mx-auto gap-4 mb-10 md:W-[60%]">
+
+                    <div class="flex gap-4 mb-2">
+
+                        <div
+                            class="border-2 bg-[#0d1117] border-[#262c36] hover:bg-[#262c36] flex py-2 px-4 rounded-[15px] gap-2 items-center">
+                            <i class="codicon codicon-cloud text-[#818891] font-bold" style="font-size: 25px;"></i>
+                            <p class="text-white">Task</p>
+                            <p
+                                class="border-1 bg-black border-[#2b6aec] text-[#2b6aec] rounded-[15px] p-1 px-2 py-0 text-sm">
+                                New</p>
+                        </div>
+
+                        <div
+                            class="border-2 bg-[#0d1117] border-[#262c36] hover:bg-[#262c36] flex py-2 px-4 rounded-[15px] gap-2 items-center">
+                            <i class="codicon codicon-issue-draft text-[#818891] font-bold"
+                                style="font-size: 25px;"></i>
+                            <p class="text-white">Create issue</p>
+                        </div>
+                    </div>
+
+                    <div
+                        class="border-2 bg-[#0d1117] max-sm:w-[30%] border-[#262c36] hover:bg-[#262c36] flex py-2 px-4 rounded-[15px] gap-2 items-center mx-auto">
+                        <i class="codicon codicon-sparkle text-[#818891] font-bold" style="font-size: 25px;"></i>
+                        <p class="text-white">Spark</p>
+                    </div>
+
+                </div>
+
+                <div class="flex justify-between items-center mb-10 w-full">
+                    <p class="text-white text-[16px] font-semibold">Feed</p>
+                    <div
+                        class="border-2 bg-[#262c36] border-[#3d444d] hover:bg-[#262c36] flex py-1 px-4 rounded-[10px] gap-2 items-center">
+                        <i class="codicon codicon-list-filter text-[#818891] font-bold" style="font-size: 25px;"></i>
+                        <p class="text-white">Filter</p>
+                    </div>
+
+                </div>
+
+
+                <div class="border-2 border-[#3d444d] p-5 rounded-lg w-full bg-[#0d1117] mb-20">
+
+                    <!-- upper -->
+                    <div class="w-full gap-5">
+
+                        <div class="justify-between flex w-[95%]">
+                            <div class="flex gap-2 items-center">
+                                <i class="codicon codicon-list-filter text-[#818891] font-bold"
+                                    style="font-size: 25px;"></i>
+                                <p class="text-[#818891]">Trending repositories</p>
+                                <p class="text-[#818891]">.</p>
+                                <a href="" class="text-[#3193f8] text-[15px] underline">See more</a>
+                            </div>
+
+                            <div>
+                                <i class="codicon codicon-ellipsis text-[#818891] font-bold"
+                                    style="font-size: 25px;"></i>
+                            </div>
+                        </div>
+
+                        <div class="flex justify-between items-center w-full">
+
+
+                            <p class="text-[15px] text-white hover:underline hover:text-blue-500">666ghj/BettaFish</p>
+
+                            <div
+                                class="border-2 bg-[#262c36] border-[#262c36] hover:bg-[#262c36] flex py-1 px-2 rounded-[10px] gap-3 items-center">
+                                <i class="codicon codicon-star-empty text-[#818891] font-bold"
+                                    style="font-size: 25px;"></i>
+                                <p class="text-white">Star</p>
+                                <i class="codicon codicon-triangle-down text-[#818891] font-bold"
+                                    style="font-size: 15px;"></i>
+                            </div>
+
+                        </div>
+
+                        <div class="text-white mb-2">
+                            <p>微舆：人人可用的多Agent舆情分析助手，打破信息茧房，还原舆情原貌，预测未来走</p>
+                            <p>向，辅助决策！从0实现，不依赖任何框架</p>
+                        </div>
+
+                        <div class="flex gap-5">
+                            <div class="flex gap-1 items-center">
+                                <i class="codicon codicon-circle-large-filled text-[#3572a5] font-bold"
+                                    style="font-size: 14px;"></i>
+                                <p class="text-[#818891] text-[14px]">Python</p>
+                            </div>
+
+                            <div class="flex gap-1 items-center">
+                                <i class="codicon codicon-star-empty text-[#818891] font-bold"
+                                    style="font-size: 14px;"></i>
+                                <p class="text-[#818891] text-[14px]">14.2k</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- middle -->
+
+                    <div>
+                        <hr class="mt-10 text-gray-500 w-full">
+                    </div>
+
+                    <!-- lower -->
+
+                    <div class="flex justify-between items-center w-full mt-5">
+
+
+                        <div class="flex gap-2 items-center">
+                            <img src="./img/66570915.png" alt="" class="w-[20px]">
+
+                            <p class="text-[15px] text-white hover:underline hover:text-blue-500">Skyvern-AI-skyvern</p>
+
+
+                        </div>
+
+
+
+
+                        <div
+                            class="border-2 bg-[#262c36] border-[#262c36] hover:bg-[#262c36] flex py-1 px-2 rounded-[10px] gap-3 items-center">
+                            <i class="codicon codicon-star-empty text-[#818891] font-bold" style="font-size: 25px;"></i>
+                            <p class="text-white">Star</p>
+                            <i class="codicon codicon-triangle-down text-[#818891] font-bold"
+                                style="font-size: 15px;"></i>
+                        </div>
+
+                    </div>
+
+                    <div class="text-white mb-2">
+                        <p>Automate browser-based workflows with LLMs and Computer Vision</p>
+                    </div>
+
+                    <div class="flex gap-5">
+                        <div class="flex gap-1 items-center">
+                            <i class="codicon codicon-circle-large-filled text-[#3572a5] font-bold"
+                                style="font-size: 14px;"></i>
+                            <p class="text-[#818891] text-[14px]">Python</p>
+                        </div>
+
+                        <div class="flex gap-1 items-center">
+                            <i class="codicon codicon-star-empty text-[#818891] font-bold" style="font-size: 14px;"></i>
+                            <p class="text-[#818891] text-[14px]">15.9k</p>
+                        </div>
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+        <!-- here i am -->
+        <div class="w-[95%] mt-5 max-lg:hidden">
+
+            <img src="./img/github_universe_combo.webp" alt="" class="rounded-tr-lg rounded-tl-lg">
+
+            <div class="border-1 border-gray-700 bg-[#0d1117] rounded-br-lg rounded-bl-lg mb-10">
+                <p class="text-white p-3">Oct 28-29 ■ San Francisco</p>
+
+                <hr class="text-[20px] text-gray-500">
+
+                <p class="text-white text-2xl font-semibold p-3">Explore GitHub’s latest tools shaping agentic software
+                    and
+                    developer choice.</p>
+
+                <hr class="text-[20px] text-gray-500">
+
+                <div class="border bg-white w-[80%] mx-auto my-4 p-4 rounded-[10px]">
+                    <p class="text-center text-[16px] font-bold">See what's new</p>
+
+                </div>
+
+            </div>
+
+            <div class="border-1 border-gray-700 bg-[#0d1117] rounded-lg p-3 mb-10">
+
+                <p class="text-white">Latest from our changelog</p>
+
+                <div class="grid grid-cols-[10%_90%] w-full gap-0 mt-4">
+
+                    <div></div>
+
+                    <div class="">
+
+                        <div class="mb-2">
+                            <p class="text-[#818891] text-[12px]">Yesterday</p>
+                            <a href="" class="text-white text-[16px] hover:underline hover:text-[#204ba8]">GitHub
+                                Copilot policy update for unconfigured policies</a>
+                        </div>
+
+                        <div class="mb-2">
+                            <p class="text-[#818891] text-[12px]">2 days ago</p>
+                            <a href="" class="text-white text-[16px] hover:underline hover:text-[#204ba8]">Required
+                                review by specific teams now available in rulesets</a>
+                        </div>
+
+                        <div class="mb-2">
+                            <p class="text-[#818891] text-[12px]">2 days ago</p>
+                            <a href="" class="text-white text-[16px] hover:underline hover:text-[#204ba8]">Delegate AI
+                                controls management to members of your enterprise</a>
+                        </div>
+
+                        <div class="mb-2">
+                            <p class="text-[#818891] text-[12px]">2 days ago</p>
+                            <a href="" class="text-white text-[16px] hover:underline hover:text-[#204ba8]">Manage
+                                budgets and track usage with new billing API updates</a>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <!-- footer -->
+
+    <footer
+        class="w-[80%] mx-auto flex flex-col items-center justify-center gap-4 text-center py-6 md:flex-row md:justify-between md:text-left md:gap-6">
+        <!-- Top Links -->
+        <div class="flex flex-wrap justify-center gap-4 text-[#8b949e] text-[13px]">
+            <p class="hover:text-[#3f89f1] hover:underline cursor-pointer">Terms</p>
+            <p class="hover:text-[#3f89f1] hover:underline cursor-pointer">Privacy</p>
+            <p class="hover:text-[#3f89f1] hover:underline cursor-pointer">Security</p>
+            <p class="hover:text-[#3f89f1] hover:underline cursor-pointer">Status</p>
+            <p class="hover:text-[#3f89f1] hover:underline cursor-pointer">Community</p>
+            <p class="hover:text-[#3f89f1] hover:underline cursor-pointer">Docs</p>
+            <p class="hover:text-[#3f89f1] hover:underline cursor-pointer">Contact</p>
+            <p class="hover:text-[#3f89f1] hover:underline cursor-pointer">Manage cookies</p>
+            <p class="hover:text-[#3f89f1] hover:underline cursor-pointer">Do not share my personal information</p>
+        </div>
+
+        <!-- Bottom Icon + Text -->
+        <div class="flex items-center gap-2 text-[#818891] text-[14px] justify-center">
+            <i class="codicon codicon-github-inverted text-[16px]"></i>
+            <p>© 2025 GitHub, Inc.</p>
+        </div>
+    </footer>
+
+
+    <!-- ====== SCRIPT ====== -->
+    <script>
+        const menuBtn = document.getElementById("menu-btn");
+        const sidebar = document.getElementById("sidebar");
+        const closeBtn = document.getElementById("close-btn");
+
+        menuBtn.addEventListener("click", () => {
+            sidebar.classList.toggle("-translate-x-full");
+            menuBtn.classList.toggle("open");
+        });
+
+        closeBtn.addEventListener("click", () => {
+            sidebar.classList.add("-translate-x-full");
+            menuBtn.classList.remove("open");
+        });
+    </script>
+
+</body>
+
+</html>
